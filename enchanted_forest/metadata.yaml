@@ -1,0 +1,22 @@
+# only lowercase, number, _ (no spaces)
+shortname: enchanted_forest
+
+# Display version of title. No HTML <tags>
+title: Enchanted Forest
+
+#  Who to call in emergency. Make sure you're in roster!
+oncall: houseofcardsmail@yahoo.com
+authors: [Mark Gottlieb]
+
+# in http://ptron.../puzzle.php?pid=2 , the 2
+puzzletron_id: 102
+
+
+# (For Safari-round multi-answer puzzles, could be more than one)
+answers:
+ - FURRY TAILS
+
+# Things the answer checker responds to (and the responses),
+# though they're not the solution. E.g., "Bring us cookies
+# (so we can tell you the real answer)". Response can have HTML.
+# It's probably displayed in small area, so don't get too wild.
