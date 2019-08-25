@@ -5,9 +5,8 @@
 
 .parent{
     position:relative;
-    width:500px;
-   	padding:20px;
-    z-index:0;
+    width:451px;
+   	padding:10px;
 }
 
 .trebuchet {
@@ -19,10 +18,9 @@
 .trebuchet-text{
     position:absolute;
     text-align:center;
-    z-index:1;
     left:0;
     width:106%;
-    bottom:19%;
+    bottom:18%;
     color:white;
     font-family:sans-serif;
 }
