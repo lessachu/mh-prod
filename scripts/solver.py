@@ -110,7 +110,7 @@ class Car(object):
                 self.stop['x'] += 2
                 self.orientation = HORIZONTAL
 
-    def red_car_can_move(self, direction, length, matrix):
+    def red_car_can_move(self, direction, length, matrix, walls):
         if length > 1:
             return False
 
@@ -130,12 +130,12 @@ class Car(object):
 
         return True
 
-    def can_move(self, direction, length, matrix):
+    def can_move(self, direction, length, matrix, walls):
         """
         Check if we can move car to `direction` and `length`
         """
         if self.is_red_car:
-            return self.red_car_can_move(direction, length, matrix)
+            return self.red_car_can_move(direction, length, matrix, walls)
 
         if self.orientation == HORIZONTAL:
             if direction in ['up', 'down']:
@@ -147,11 +147,20 @@ class Car(object):
 
         # check if there are some other cars on the way
         # or board ending
+        car_start_points = self.get_points()
+
         car = deepcopy(self)
         car.move(direction, length)
         for point in car.get_points():
             if point['y'] < 0 or point['x'] < 0:
                 return False
+
+            if (point['x'],point['y']) in walls:
+            #    print "trying to move into a wall square (" + str(point['x']) + "," + str(point['y']) + ")"
+                wall_squares = walls[(point['x'],point['y'])]
+                for start_point in car_start_points:
+                    if (start_point['x'],start_point['y']) in wall_squares:
+                        return False;
             try:
                 character = matrix[point['y']][point['x']]
                 if character != '.' and character != self.character:
@@ -198,6 +207,7 @@ class Solver(object):
         self.endX = 0
         self.endY = 0
         self.wall_matrix = []
+        self.wall_edge_dict = {}
 
     def on_board(self, x, y):
         if x < 0 or x >= self.size['x']:
@@ -365,7 +375,7 @@ class Solver(object):
                     else:
         #                print "this is a vertical wall"
                         walls = self.add_wall_edge(walls, x, y/2, x, y/2 + 1)
-        return walls_matrix
+        return walls
 
     def load_data(self, board_data, endx, endy):
         """
@@ -377,8 +387,7 @@ class Solver(object):
         results = self.str_to_matrix(board_data)
         matrix = results[0]
         self.wall_matrix = results[1]
-        print matrix
-        walls = self.generate_wall_dict(self.wall_matrix)
+        self.walls = self.generate_wall_dict(self.wall_matrix)
         self.generate_cars_horizontal(matrix)
         self.generate_cars_vertical(matrix)
         self.check_data(self.cars)
@@ -407,7 +416,7 @@ class Solver(object):
         states = []
         for car in cars:
             for direction in ['up', 'down', 'left', 'right']:
-                if car.can_move(direction, 1, self.cars_to_matrix(cars)):
+                if car.can_move(direction, 1, self.cars_to_matrix(cars), self.walls):
                     # TODO: in case of performance improvemens see here first
                     new_cars = deepcopy(cars)
                     new_car = tuple(filter(
