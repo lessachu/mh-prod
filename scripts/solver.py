@@ -463,10 +463,21 @@ class Solver(object):
 
     def format_data(self, cars):
         matrix = self.cars_to_matrix(cars)
+        wall_line = []
+
+        # add in sea wall information
+        for y in reversed(range(self.size['y'])):
+            wall_line = []
+            for x in reversed(range(self.size['x'] - 1)):
+                matrix[y].insert(x+1,'|')
+                wall_line.append('- ')
+            wall_line.append('-')
+            if y < self.size['y'] - 1:
+                matrix.insert(y+1, wall_line)
 
         output = ''
         for line in matrix:
-            output += " ".join(line) + '\n'
+            output += "".join(line) + '\n' 
         return output
 
 
