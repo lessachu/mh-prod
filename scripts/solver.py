@@ -296,23 +296,31 @@ class Solver(object):
     def str_to_matrix(self, init_data):
         """
         Covert text into 2D array that will be processed further
+        Also generate the matrix of wall data
         """
         matrix = []
-        xlen = 0;
+        walls = []
         for line in init_data.split("\n"):
             line = line.replace(' ', '').replace('\r', '')
             if not line:
                 continue
+
             matrix_line = []
-            xlen = len(line)
+            wall_line = []
             for item in line:
-                matrix_line.append(item)
-            matrix.append(line)
+                if item != '|' and item != '-' and item != 'x':
+                    matrix_line.append(item)
+                else:
+                    wall_line.append(item)
+            if matrix_line:
+                matrix.append(matrix_line)
+            if wall_line:
+                walls.append(wall_line)
 
 # too annoying to keep changing this variable
         self.size['y'] = len(matrix)
-        self.size['x'] = xlen
-        print "grid size is " + str(len(matrix)) + " x " + str(xlen)
+        self.size['x'] = len(matrix[0])
+        print "grid size is " + str(len(matrix)) + " x " + str(len(matrix[0]))
 
   #      if len(matrix) != self.size['y']:
 #         raise WrongInputException("Incorrect board size(y) given")
@@ -320,16 +328,24 @@ class Solver(object):
 #            if len(line) != self.size['x']:
 #                raise WrongInputException("Incorrect board size(x) given")
 
-        return matrix
+        return matrix, walls
 
-    def load_data(self, init_data, endx, endy):
+    def generate_wall_dict(self, walls_matrix):
+        return walls_matrix
+
+    def load_data(self, board_data, endx, endy):
         """
         We assume that there is no case
         when car be readed as vertical and horizontal at the same time
         Also we assume that there are no cars on the way of red car
         that can't be moved to side
         """
-        matrix = self.str_to_matrix(init_data)
+        results = self.str_to_matrix(board_data)
+        matrix = results[0]
+        walls_matrix = results[1]
+        print matrix
+        print walls_matrix
+        walls = self.generate_wall_dict(walls_matrix)
         self.generate_cars_horizontal(matrix)
         self.generate_cars_vertical(matrix)
         self.check_data(self.cars)
@@ -455,20 +471,35 @@ class Solver(object):
 
 
 if __name__ == '__main__':
-    board_data = '''
-       BBB..C
-       AA..DC
-       ....DC
-       ErFFFF
-       E.....
-       E.....
+#   board_data = '''
+#      BBB..C
+#      AA..DC
+#      ....DC
+#      ErFFFF
+#      E.....
+#      E.....
+#   '''
+
+    wall_data = '''
+       B|B|B|.|.|C
+       - - - - - -
+       A|A|.|.|D|C
+       - - - - - -
+       .|.|.|.|D|C
+       - x - - - - 
+       E|r|F|F|F|F
+       - - - - - -
+       E|.|.|.|.|.
+       - - - - - -
+       E|.|.|.|.|.
     '''
+
 
     endx = 3
     endy = 0
 
     solver = Solver()
-    solver.load_data(board_data, endx, endy)
+    solver.load_data(wall_data, endx, endy)
     print('Loaded data')
     solver.format_data(solver.cars)
     print('Looking for solution.. (may take several seconds)')
