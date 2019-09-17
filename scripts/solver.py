@@ -197,6 +197,7 @@ class Solver(object):
         self.steps = []
         self.endX = 0
         self.endY = 0
+        self.wall_matrix = []
 
     def on_board(self, x, y):
         if x < 0 or x >= self.size['x']:
@@ -330,7 +331,40 @@ class Solver(object):
 
         return matrix, walls
 
+    def add_wall_edge(self, walls, x1, y1, x2, y2):
+        if (x1,y1) in walls:
+            wall_ends = walls[(x1,y1)]
+        else:
+            wall_ends = []  
+        wall_ends.append((x2,y2))
+        walls[(x1,y1)] = wall_ends
+                  
+        if (x2,y2) in walls:
+            wall_ends = walls[(x2,y2)]
+        else:
+            wall_ends = []
+        wall_ends.append((x1,y1))
+        walls[(x2,y2)] = wall_ends
+        return walls
+
+
     def generate_wall_dict(self, walls_matrix):
+        print walls_matrix
+   #     print "wall matrix size is: " + str(len(walls_matrix)) + " x " + str(len(walls_matrix[0]))
+        walls = {}
+
+        for y in range(len(walls_matrix)):
+            for x in range(len(walls_matrix[0])):
+                if walls_matrix[y][x] == 'x':
+     #               print "found wall at " + str(x) + "," + str(y)
+                    if y % 2 == 0:
+     #                   print "this is a horizontal wall"
+                        # horizontal walls are between the cur square the square to the right
+                        walls = self.add_wall_edge(walls, x, y/2, x+1, y/2)
+
+                    else:
+        #                print "this is a vertical wall"
+                        walls = self.add_wall_edge(walls, x, y/2, x, y/2 + 1)
         return walls_matrix
 
     def load_data(self, board_data, endx, endy):
@@ -342,10 +376,9 @@ class Solver(object):
         """
         results = self.str_to_matrix(board_data)
         matrix = results[0]
-        walls_matrix = results[1]
+        self.wall_matrix = results[1]
         print matrix
-        print walls_matrix
-        walls = self.generate_wall_dict(walls_matrix)
+        walls = self.generate_wall_dict(self.wall_matrix)
         self.generate_cars_horizontal(matrix)
         self.generate_cars_vertical(matrix)
         self.check_data(self.cars)
@@ -469,11 +502,19 @@ class Solver(object):
         for y in reversed(range(self.size['y'])):
             wall_line = []
             for x in reversed(range(self.size['x'] - 1)):
-                matrix[y].insert(x+1,'|')
-                wall_line.append('- ')
-            wall_line.append('-')
+                matrix[y].insert(x+1," ")
+                wall_line.append('  ')
+            wall_line.append(' ')
             if y < self.size['y'] - 1:
                 matrix.insert(y+1, wall_line)
+
+        for y in range(len(self.wall_matrix)):
+            for x in range(len(self.wall_matrix[0])):
+                if self.wall_matrix[y][x] == 'x':
+                    if y % 2 == 0:
+                        matrix[y][(x*2) + 1] = '|'
+                    else:
+                        matrix[y][x] = '- '
 
         output = ''
         for line in matrix:
@@ -495,14 +536,14 @@ if __name__ == '__main__':
        B|B|B|.|.|C
        - - - - - -
        A|A|.|.|D|C
-       - - - - - -
+       - - - x - -
        .|.|.|.|D|C
        - x - - - - 
        E|r|F|F|F|F
        - - - - - -
-       E|.|.|.|.|.
+       Ex.|.|.|.|.
        - - - - - -
-       E|.|.|.|.|.
+       E|.x.x.|.|.
     '''
 
 
