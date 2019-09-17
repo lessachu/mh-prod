@@ -198,6 +198,19 @@ class Solver(object):
         self.endX = 0
         self.endY = 0
 
+    def on_board(self, x, y):
+        if x < 0 or x >= self.size['x']:
+            return False;
+        return not (y < 0 or y >= self.size['y'])
+
+    def single_car(self, matrix, character, x, y):
+        top = self.on_board(x, y-1) and matrix[x][y-1] == character
+        left = self.on_board(x-1, y) and matrix[x-1][y] == character
+        bottom = self.on_board(x, y+1) and matrix[x][y+1] == character
+        right = self.on_board(x+1, y) and matrix[x+1][y] == character
+
+        return not (top or left or bottom or right)
+
     def generate_cars_vertical(self, matrix):
         """
         Go through line by line and generate cars
@@ -207,8 +220,6 @@ class Solver(object):
             car_data = {'character': None}
             for y in range(self.size['y']):
                 item = matrix[y][x]
-                print str(y) + "," + str(x)
-                print item
 
                 if item != car_data['character'] or y == self.size['y'] - 1:
                     # We have start/stop point here
@@ -227,6 +238,21 @@ class Solver(object):
                                     car_data['stop'],
                                     is_red_car=(car_data['character'] == 'r')
                                 )
+
+                                self.cars.append(car_obj)
+                        elif car_data['character'] == 'r':
+
+                            if self.single_car(matrix, car_data['character'], car_data['start']['x'], car_data['start']['y']):
+                                car_obj = Car(
+                                    ON_END,
+                                    car_data['character'],
+                                    car_data['start'],
+                                    car_data['stop'],
+                                    is_red_car= True
+                                )
+
+                                print("red car is on an end at " + str(car_data['start']['x']) + "," +
+                                    str(car_data['stop']['y']))
                                 self.cars.append(car_obj)
 
                     car_data = {
@@ -250,6 +276,7 @@ class Solver(object):
                             if item == car_data['character']:
                                 car_data['stop'] = {'x': x, 'y': y}
 
+
                         if car_data['stop']['x'] - car_data['start']['x'] > 0:
                             if car_data['character'] != '.':
                                 car_obj = Car(
@@ -271,21 +298,21 @@ class Solver(object):
         Covert text into 2D array that will be processed further
         """
         matrix = []
-        ylen = 0;
+        xlen = 0;
         for line in init_data.split("\n"):
             line = line.replace(' ', '').replace('\r', '')
             if not line:
                 continue
             matrix_line = []
-            ylen = len(line)
+            xlen = len(line)
             for item in line:
                 matrix_line.append(item)
             matrix.append(line)
 
-# too annoying to keep changing this cvariable
+# too annoying to keep changing this variable
         self.size['y'] = len(matrix)
-        self.size['x'] = ylen
-        print "grid size is " + str(len(matrix)) + " x " + str(ylen)
+        self.size['x'] = xlen
+        print "grid size is " + str(len(matrix)) + " x " + str(xlen)
 
   #      if len(matrix) != self.size['y']:
 #         raise WrongInputException("Incorrect board size(y) given")
@@ -317,9 +344,9 @@ class Solver(object):
         if not filter(lambda x: x.is_red_car, cars):
             raise WrongInputException("No red car found")
 
-        result = tuple(filter(lambda car: len(list(car.get_points())) < 2, cars))
-        if result:
-            raise WrongInputException("Car should take at least two cells")
+    #    result = tuple(filter(lambda car: len(list(car.get_points())) < 2, cars))
+    #    if result:
+    #        raise WrongInputException("Car should take at least two cells")
 
         return
 
@@ -432,17 +459,10 @@ if __name__ == '__main__':
        BBB..C
        AA..DC
        ....DC
-       E.FFFF
-       Er....
-       Er....
+       ErFFFF
+       E.....
+       E.....
     '''
- #  board_data = '''
- #       .....
- #       .rr..
- #       .....
- #       .....
- #       .....
- #   '''
 
     endx = 3
     endy = 0
@@ -451,6 +471,6 @@ if __name__ == '__main__':
     solver.load_data(board_data, endx, endy)
     print('Loaded data')
     solver.format_data(solver.cars)
-    print('Looking for solution.. (may take several secods)')
+    print('Looking for solution.. (may take several seconds)')
     moves = solver.solve()
     print(solver.format_steps(solver.cars, moves))
