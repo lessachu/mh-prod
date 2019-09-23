@@ -1,0 +1,17 @@
+# only lowercase, number, _ (no spaces)
+shortname: hall_of_mystery
+
+# Display version of title. No HTML <tags>
+title: Hall of Mystery
+
+#  Who to call in emergency. Make sure you're in roster!
+oncall: mrswiss2@gmail.com
+authors: [Martin Reinfried]
+
+# in http://ptron.../puzzle.php?pid=2 , the 2
+puzzletron_id: 86
+
+
+# (For Safari-round multi-answer puzzles, could be more than one)
+answers:
+ - BOLD STROKE

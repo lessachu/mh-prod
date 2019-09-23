@@ -1,0 +1,51 @@
+/* styles specific to this puzzle */
+#puzz #portrait {
+    text-align: center;
+    background-color: beige;
+}
+
+.clue1 {
+	text-align: center;
+	font-style: italic;
+}
+
+.chamber {
+	text-align: left;
+	font-weight: bold;
+}
+
+.clue-header {
+	font-weight:bold;
+}
+
+.puzzle-content div.grid { width: 100%; margin: 0 auto; }		
+.puzzle-content div.grid table { margin: 0 auto; border-collapse: collapse; }
+.puzzle-content div.grid table td {
+	width: 2.5em; height: 2.5em; font-size: 0.8em;
+	vertical-align: top;
+	box-sizing: border-box;
+	border: 1px solid transparent;
+	padding: 0;
+}
+.puzzle-content div.grid table td.u { border-top: 3px solid grey; }
+.puzzle-content div.grid table td.d { border-bottom: 3px solid grey; }
+.puzzle-content div.grid table td.l { border-left: 3px solid grey; }
+.puzzle-content div.grid table td.r { border-right: 3px solid grey; }
+.puzzle-content div.grid table td.ub { border-top: 3px dashed grey;}
+.puzzle-content div.grid table td.db { border-bottom: 3px dashed grey;}
+.puzzle-content div.grid table td.lb { border-left: 3px dashed grey;}
+.puzzle-content div.grid table td.rb { border-right: 3px dashed grey;}
+.puzzle-content div.grid table td.filled { background-color: lightgrey;}
+
+.clues {
+	font-size: smallest ;
+}
+
+.puzzle-content div.print-safe { page-break-inside: avoid; }
+
+@media print {
+	.puzzle-content div.print-safe { page-break-inside: avoid; margin-bottom: 1em; }
+	.puzzle-content div.clues { display: block; columns: 2em 4; }
+	.puzzle-content div.clues div { width: 100%; }
+	.puzzle-content div.grid table td { width: 35px; height: 35px; font-size: 12px; }
+}
