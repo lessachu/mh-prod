@@ -196,7 +196,10 @@ class Car(object):
                     return False
 
                 if (point['x'],point['y']) in walls:
-              #      print "trying to move into a wall square (" + str(point['x']) + "," + str(point['y']) + ")"
+                    print "trying to move into a wall square (" + str(point['x']) + "," + str(point['y']) + ")"
+
+                    print "whale is " + self.whale_orientation + " " + self.whale_face + " trying to move " + direction
+                    print "face_to_move is " + face_to_move[self.whale_face][direction] 
 
                     # two special cases for wall squares:
                     # whale can leap over a wall, so it's valid to be in a wall square, if you're facing
@@ -205,10 +208,14 @@ class Car(object):
                     wall_squares = walls[(point['x'],point['y'])]
                     for start_point in origin_points:
                         if (start_point['x'],start_point['y']) in wall_squares:
-                            if self.whale_orientation == FACE_UP:
-                   #             print "whale is facing: " + self.whale_face + " trying to move " + direction
-                                if face_to_move[self.whale_face][direction] != UP:
-                                    return False
+
+                            print "whale started in an origin point for the wall"
+                            if self.whale_orientation != FACE_UP:
+                                return False;
+
+                            if face_to_move[self.whale_face][direction] != UP:
+                                return False;
+
                     # but it's not valid if the move lands you on a wall
                     for point2 in destination_points:
                         if (point2['x'],point2['y']) in wall_squares:
@@ -221,7 +228,7 @@ class Car(object):
 
         del red_car
 
-#        print "Red Car move is valid"
+        print "Red Car move is valid"
 
         return True
 
@@ -230,7 +237,7 @@ class Car(object):
         Check if we can move car to `direction` and `length`
         """
 
- #       print "Trying move " + direction + " for " + self.character + " from " + str(self.start['x']) + "," + str(self.start['y'])
+        print "Trying move " + direction + " for " + self.character + " from " + str(self.start['x']) + "," + str(self.start['y'])
 
         if self.is_red_car:
             return self.red_car_can_move(direction, length, matrix, walls)
@@ -267,7 +274,7 @@ class Car(object):
                 return False
         del car
 
-  #      print "Move is valid"
+        print "Move is valid"
         return True
 
     def move(self, direction, length):
@@ -561,10 +568,10 @@ class Solver(object):
         is_doubled = False
 
         while len(Q) != 0:
-   #         print "Q : " + str(Q)
+    #       print "Q : " + str(Q)
             moves, cars = Q.pop(0)
 
-    #        print "checking moves, cars:" + str(moves) + " " + str(cars)
+            print "checking moves, cars:" + str(moves) + " " + str(cars)
 
             if self.is_solved(cars):
                 if len(moves) < min_moves:
@@ -577,7 +584,7 @@ class Solver(object):
 
             for new_moves, new_cars in self.get_all_states(cars):
                 if hash(str(new_cars)) not in visited:
-      #              print "Adding to Q: " + str( moves + new_moves) + " " + str(new_cars)
+                    print "Adding to Q: " + str( moves + new_moves) + " " + str(new_cars)
                     Q.append([moves + new_moves, new_cars])
                     visited.add(hash(str(new_cars)))
 
@@ -668,22 +675,43 @@ class Solver(object):
 if __name__ == '__main__':
 
 
+    # wall_data = '''
+    #     B|B|B|.|.|C
+    #     - - x - - -
+    #     A|A|.|.|D|C
+    #     - - - - - -
+    #     .|.|.|.|D|C
+    #     - x - x - - 
+    #     E|r|F|F|F|F
+    #     - - - - - -
+    #     Ex.|.|.x.|.
+    #     - - - - - x
+    #     E|.|.|.|.|.
+    #    '''
+
+
+    # endx = 3
+    # endy = 0
+
+    # whale_start_orientation = FACE_UP
+    # whale_start_face = NORTH
+
     wall_data = '''
-        B|B|B|.|.|C
-        - - x - - -
-        A|A|.|.|D|C
+        .|.|.|.|.|.
         - - - - - -
-        .|.|.|.|D|C
-        - x - x - - 
-        E|r|F|F|F|F
+        .|.|.|.|.|.
+        x - - - - -
+        .|.|.x.|.|.
+        - - - - - x 
+        .|.|.|.|.|.
         - - - - - -
-        Ex.|.|.|.|.
-        - - - - - -
-        E|.x.x.|.|.
+        .|.|.x.|.|.
+        - - - x - -
+        .|.|.|.|r|r
        '''
 
 
-    endx = 3
+    endx = 2
     endy = 0
 
 
@@ -701,8 +729,8 @@ if __name__ == '__main__':
 
     print "end is at " + str(endx) + "," + str(endy)
 
-    whale_start_orientation = FACE_UP
-    whale_start_face = NORTH
+    whale_start_orientation = BACK_UP
+    whale_start_face = WEST
 
     solver = Solver()
     solver.load_data(wall_data, endx, endy, whale_start_orientation, whale_start_face)
