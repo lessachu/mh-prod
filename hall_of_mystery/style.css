@@ -7,10 +7,11 @@
 .clue1 {
 	text-align: center;
 	font-style: italic;
+	font-size: x-large;
 }
 
 .chamber {
-	text-align: left;
+	text-align: center;
 	font-weight: bold;
 }
 
@@ -27,6 +28,7 @@
 	box-sizing: border-box;
 	border: 1px solid transparent;
 	padding: 0;
+	font-family:"Georgia";
 }
 .puzzle-content div.grid table td.u { border-top: 3px solid grey; }
 .puzzle-content div.grid table td.d { border-bottom: 3px solid grey; }
@@ -38,9 +40,11 @@
 .puzzle-content div.grid table td.rb { border-right: 3px dashed grey;}
 .puzzle-content div.grid table td.filled { background-color: lightgrey;}
 
-.clues {
-	font-size: smallest;
+div.clues {
+	font-size: %25;
 }
+
+div.clues table td { vertical-align: top; text-align: left; }
 
 .puzzle-content div.print-safe { page-break-inside: avoid; }
 
@@ -49,4 +53,5 @@
 	.puzzle-content div.clues { display: block; columns: 2em 4; }
 	.puzzle-content div.clues div { width: 100%; }
 	.puzzle-content div.grid table td { width: 35px; height: 35px; font-size: 12px; }
+	.chamber { page-break-before: always;}
 }
