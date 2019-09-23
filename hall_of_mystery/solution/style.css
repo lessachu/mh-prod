@@ -37,6 +37,7 @@
 .puzzle-content div.grid table td.lb { border-left: 3px dashed grey;}
 .puzzle-content div.grid table td.rb { border-right: 3px dashed grey;}
 .puzzle-content div.grid table td.filled { background-color: lightgrey;}
+.puzzle-content div.grid table td.blue { background-color: blue;}
 
 .clues {
 	font-size: smallest;
@@ -49,4 +50,24 @@
 	.puzzle-content div.clues { display: block; columns: 2em 4; }
 	.puzzle-content div.clues div { width: 100%; }
 	.puzzle-content div.grid table td { width: 35px; height: 35px; font-size: 12px; }
+}
+
+ .puzzle-content div.grid table td.blue { background-color: #5EBBE3;}
+ .puzzle-content div.grid table td.red { background-color: #E35E63;}
+ .puzzle-content div.grid table td.purple { background-color: #B35EE3;}
+ .puzzle-content div.grid table td.yellow { background-color: #E3D25E;}
+ .puzzle-content div.grid table td.green { background-color: #79E35E;}
+ .puzzle-content div.grid table td.olive { background-color: #98B277;}
+ .puzzle-content div.grid table td.orange { background-color: #FBB234;}
+ .puzzle-content div.grid table td.bluegrey { background-color: #5F678D;}
+  .puzzle-content div.grid table td.wine { background-color: #945F5F;}
+  .puzzle-content div.grid table td.orangebluegrey { background-image: linear-gradient(#FBB234, #5F678D);}
+  .puzzle-content div.grid table td.redwine { background-image: linear-gradient(#E35E63, #945F5F);} 
+  .puzzle-content div.grid table td.yellowblue { background-image: linear-gradient(#E3D25E,#5EBBE3);}
+  .puzzle-content div.grid table td.greenyellow { background-image: linear-gradient(#79E35E,#E3D25E); }
+ .puzzle-content div.grid table td.greenred { background-image: linear-gradient(#79E35E,#E35E63);}
+.puzzle-content div.grid table td.greenfilled { background-image: linear-gradient(#79E35E,lightgrey);}
+
+  .puzzle-content-tiny div.grid table td {
+	width: 2.5em; height: 2.5em; font-size: 0.5em;
 }
