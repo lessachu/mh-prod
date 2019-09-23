@@ -196,10 +196,10 @@ class Car(object):
                     return False
 
                 if (point['x'],point['y']) in walls:
-                    print "trying to move into a wall square (" + str(point['x']) + "," + str(point['y']) + ")"
+                    # print "trying to move into a wall square (" + str(point['x']) + "," + str(point['y']) + ")"
 
-                    print "whale is " + self.whale_orientation + " " + self.whale_face + " trying to move " + direction
-                    print "face_to_move is " + face_to_move[self.whale_face][direction] 
+                    # print "whale is " + self.whale_orientation + " " + self.whale_face + " trying to move " + direction
+                    # print "face_to_move is " + face_to_move[self.whale_face][direction] 
 
                     # two special cases for wall squares:
                     # whale can leap over a wall, so it's valid to be in a wall square, if you're facing
@@ -209,7 +209,7 @@ class Car(object):
                     for start_point in origin_points:
                         if (start_point['x'],start_point['y']) in wall_squares:
 
-                            print "whale started in an origin point for the wall"
+#                           print "whale started in an origin point for the wall"
                             if self.whale_orientation != FACE_UP:
                                 return False;
 
@@ -228,7 +228,7 @@ class Car(object):
 
         del red_car
 
-        print "Red Car move is valid"
+ #       print "Red Car move is valid"
 
         return True
 
@@ -237,7 +237,7 @@ class Car(object):
         Check if we can move car to `direction` and `length`
         """
 
-        print "Trying move " + direction + " for " + self.character + " from " + str(self.start['x']) + "," + str(self.start['y'])
+#       print "Trying move " + direction + " for " + self.character + " from " + str(self.start['x']) + "," + str(self.start['y'])
 
         if self.is_red_car:
             return self.red_car_can_move(direction, length, matrix, walls)
@@ -274,7 +274,7 @@ class Car(object):
                 return False
         del car
 
-        print "Move is valid"
+#      print "Move is valid"
         return True
 
     def move(self, direction, length):
@@ -571,7 +571,7 @@ class Solver(object):
     #       print "Q : " + str(Q)
             moves, cars = Q.pop(0)
 
-            print "checking moves, cars:" + str(moves) + " " + str(cars)
+#           print "checking moves, cars:" + str(moves) + " " + str(cars)
 
             if self.is_solved(cars):
                 if len(moves) < min_moves:
@@ -584,7 +584,7 @@ class Solver(object):
 
             for new_moves, new_cars in self.get_all_states(cars):
                 if hash(str(new_cars)) not in visited:
-                    print "Adding to Q: " + str( moves + new_moves) + " " + str(new_cars)
+#                   print "Adding to Q: " + str( moves + new_moves) + " " + str(new_cars)
                     Q.append([moves + new_moves, new_cars])
                     visited.add(hash(str(new_cars)))
 
@@ -618,16 +618,19 @@ class Solver(object):
         return False
 
     def format_steps(self, cars, moves):
+        num_whale_moves = 0
         output = ''
         output += '\n\nSOLUTION\n'
         output += "; ".join(["{} {}".format(move[0], move[1]) for move in moves])
         cars = deepcopy(cars)
         for move in moves:
             car = tuple(filter(lambda x: x.character == move[0], cars))[0]
+            if car.character == 'r':
+                num_whale_moves = num_whale_moves + 1
             output += '\nMOVE {} {}\n'.format(move[0], move[1])
             car.move(move[1], 1)
             output += self.format_data(cars)
-        output += '\nEND of SOLUTION\n\n' + 'Total Moves: ' + str(len(moves))
+        output += '\nEND of SOLUTION\n\n' + 'Total Moves: ' + str(len(moves)) + ' Whale Moves: ' + str(num_whale_moves)
         return output
 
     def cars_to_matrix(self, cars):
@@ -700,12 +703,12 @@ if __name__ == '__main__':
         .|.|.|.|.|.
         - - - - - -
         .|.|.|.|.|.
-        x - - - - -
+        x x x - x -
         .|.|.x.|.|.
         - - - - - x 
-        .|.|.|.|.|.
+        .|.|.|A|.|.
         - - - - - -
-        .|.|.x.|.|.
+        .|.|.|A|B|B
         - - - x - -
         .|.|.|.|r|r
        '''
