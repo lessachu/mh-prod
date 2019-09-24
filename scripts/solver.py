@@ -300,7 +300,7 @@ class Car(object):
             self.stop['x'] += length
 
     def __repr__(self):
-        return "{} ({}->{})".format(self.character, self.start, self.stop)
+        return "{} ({}->{},{},{})".format(self.character, self.start, self.stop, self.whale_orientation, self.whale_face)
 
 
 class Solver(object):
@@ -427,6 +427,7 @@ class Solver(object):
                         'start': {'x': x, 'y': y},
                         'character': item,
                     }
+        print self.cars
 
     def str_to_matrix(self, init_data):
         """
@@ -568,10 +569,10 @@ class Solver(object):
         is_doubled = False
 
         while len(Q) != 0:
-    #       print "Q : " + str(Q)
+ #           print "Q : " + str(Q)
             moves, cars = Q.pop(0)
 
-#           print "checking moves, cars:" + str(moves) + " " + str(cars)
+ #           print "checking moves, cars:" + str(moves) + " " + str(cars)
 
             if self.is_solved(cars):
                 if len(moves) < min_moves:
@@ -583,8 +584,9 @@ class Solver(object):
                     is_doubled = True
 
             for new_moves, new_cars in self.get_all_states(cars):
+  #              print "Considering:\n" + str(new_cars)
                 if hash(str(new_cars)) not in visited:
-#                   print "Adding to Q: " + str( moves + new_moves) + " " + str(new_cars)
+   #                 print "Adding to Q: " + str( moves + new_moves) + " " + str(new_cars)
                     Q.append([moves + new_moves, new_cars])
                     visited.add(hash(str(new_cars)))
 
@@ -699,23 +701,23 @@ if __name__ == '__main__':
     # whale_start_orientation = FACE_UP
     # whale_start_face = NORTH
 
-    wall_data = '''
-        .|.|.|.|.|.
-        - - - - - -
-        .|.|.|.|.|.
-        x x x - x -
-        .|.|.x.|.|.
-        - - - - - x 
-        .|.|.|A|.|.
-        - - - - - -
-        .|.|.|A|B|B
-        - - - x - -
-        .|.|.|.|r|r
-       '''
+    # wall_data = '''
+    #     .|.|.|.|.|.
+    #     - - - - - -
+    #     .|.|.|.|.x                                                                                                                                                                      .
+    #     x x x x x -
+    #     .|.|.|.|.|.
+    #     - - - - - x 
+    #     .|.|.|.|.|.
+    #     - - - - - -
+    #     .|.|.|B|B|B
+    #     - - - - - -
+    #     .|.|.|.|r|r
+    #    '''
 
 
-    endx = 2
-    endy = 0
+    # endx = 2
+    # endy = 0
 
 
     # wall_data = '''
@@ -729,6 +731,24 @@ if __name__ == '__main__':
 
     # endx = 1
     # endy = 0
+
+    wall_data = '''
+        .|.|.|.|.|.
+        - - - - - -
+        .|.|.|.|.|.                                                                                                                                                                     .
+        x x x x x -
+        .|.|.|.|.x.
+        - - - - - x 
+        .|.|.|.|.|.
+        - - - - - -
+        .|.|.|B|B|B
+        - - - x - -
+        .|.|.|.|r|r
+       '''
+
+
+    endx = 5
+    endy = 0
 
     print "end is at " + str(endx) + "," + str(endy)
 
