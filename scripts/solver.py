@@ -26,8 +26,8 @@ SIZE = {'x': 6, 'y': 6}
 
 whale_moves = {
     FACE_UP : { UP : (BACK_UP, NORTH), RIGHT : (LEFT_SIDE_UP, EAST), DOWN : (BELLY_UP, SOUTH), LEFT: (RIGHT_SIDE_UP, WEST) },
-    BACK_UP : { UP : (TAIL_UP, SOUTH), RIGHT : (LEFT_SIDE_UP, NORTH), DOWN : (FACE_UP, NORTH), LEFT: (RIGHT_SIDE_UP, NORTH) },
-    TAIL_UP : { UP : (BACK_UP, SOUTH), RIGHT : (LEFT_SIDE_UP, WEST), DOWN : (BELLY_UP, NORTH), LEFT: (RIGHT_SIDE_UP, EAST) },
+    BACK_UP : { UP : (TAIL_UP, NORTH), RIGHT : (LEFT_SIDE_UP, NORTH), DOWN : (FACE_UP, NORTH), LEFT: (RIGHT_SIDE_UP, NORTH) },
+    TAIL_UP : { UP : (BELLY_UP, SOUTH), RIGHT : (LEFT_SIDE_UP, WEST), DOWN : (BACK_UP, NORTH), LEFT: (RIGHT_SIDE_UP, EAST) },
     BELLY_UP : { UP : (TAIL_UP, SOUTH), RIGHT : (RIGHT_SIDE_UP, NORTH), DOWN : (FACE_UP, SOUTH), LEFT : (LEFT_SIDE_UP, NORTH) },
     RIGHT_SIDE_UP : { UP : (TAIL_UP, WEST), RIGHT : (BACK_UP, NORTH), DOWN : (FACE_UP, EAST), LEFT : (BELLY_UP, NORTH) },
     LEFT_SIDE_UP : { UP : (TAIL_UP, EAST), RIGHT : (BELLY_UP, NORTH), DOWN : (FACE_UP, WEST), LEFT : (BACK_UP, NORTH) } 
@@ -103,17 +103,17 @@ class Car(object):
         # need to translate direction based on where the whale is currently facing
         new_direction = face_to_move[self.whale_face][direction]
 
- #       print "whale is " + self.whale_orientation + " facing " + self.whale_face + " moving " + new_direction
+  #      print "whale is " + self.whale_orientation + " facing " + self.whale_face + " moving " + new_direction
 
         new_orientation = orientation_dict[new_direction]
         self.whale_orientation = new_orientation[0]
 
         # similarly, modify face information based on the move
-   #     print "Face (from north) is " + new_orientation[1]
+ #       print "Face (from north) is " + new_orientation[1]
 
         new_face = DIRECTIONS[(DIRECTIONS.index(self.whale_face) + delta_from_north[new_orientation[1]]) % 4]
 
- #       print "After move, whale is " +  self.whale_orientation + " facing " + new_face
+  #      print "After move, whale is " +  self.whale_orientation + " facing " + new_face
 
         self.whale_face = new_face
 
@@ -747,28 +747,28 @@ if __name__ == '__main__':
     # whale_start_orientation = FACE_UP
     # whale_start_face = NORTH
 
-    # wall_data = '''
-    #     .|.|.|A|.|.
-    #     - x - - - -
-    #     .|.|.|A|.|.                                                                                                                                                                     .
-    #     x x x - x -
-    #     .|.|.|A|.x.
-    #     - - - - - x 
-    #     C|C|.|.|.|.
-    #     - x - - - -
-    #     .|.|.|B|B|B
-    #     - - - x - -
-    #     .|.|.|.|r|r
-    #    '''
+    wall_data = '''
+        .|.|.|A|.|.
+        - x - - - -
+        .|.|.|A|.|.                                                                                                                                                                     .
+        x x x - x -
+        .|.|.|A|.x.
+        - - - - - x 
+        C|C|.|.|.|.
+        - x - - - -
+        .|.|.|B|B|B
+        - - - x - -
+        .|.|.|.|r|r
+       '''
 
 
-    # endx = 2
-    # endy = 0
+    endx = 2
+    endy = 0
 
-    # print "end is at " + str(endx) + "," + str(endy)
+    print "end is at " + str(endx) + "," + str(endy)
 
-    # whale_start_orientation = BACK_UP
-    # whale_start_face = WEST
+    whale_start_orientation = BACK_UP
+    whale_start_face = WEST
 
     # wall_data = '''
     #    .|.|.
@@ -782,28 +782,28 @@ if __name__ == '__main__':
     # endx = 1
     # endy = 0
 
-    wall_data = '''
-        .x.x.|.|.|.
-        - x - - - -
-        .|.|.|.|.|.                                                                                                                                                                     .
-        - - - - - -
-        .|.|.|.|.|.
-        - - - - - - 
-        .|.|.|.|.|.
-        - - - - - -
-        .|.|.|.|.|.
-        - - - - x -
-        .|.|.|.xr|.
-       '''
+    # wall_data = '''
+    #     .x.x.|.|.|.
+    #     - x - - - -
+    #     .|.|.|.|.|.                                                                                                                                                                     .
+    #     - - - - - -
+    #     .|.|.xA|A|.
+    #     - - - - - - 
+    #     .|.|.|.|r|.
+    #     - - - x - -
+    #     .|.|.|.|r|.
+    #     - - - - - -
+    #     .|.|.|.x.|.
+    #    '''
 
 
-    endx = 1
-    endy = 0
+    # endx = 1
+    # endy = 0
 
 
 
-    whale_start_orientation = FACE_UP
-    whale_start_face = WEST
+    # whale_start_orientation = LEFT_SIDE_UP
+    # whale_start_face = NORTH
 
     print "end is at " + str(endx) + "," + str(endy)
 
