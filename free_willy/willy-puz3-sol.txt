@@ -1,0 +1,315 @@
+    wall_data = '''
+        B|B|B|.|.|C
+        - - x - - -
+        A|A|.|.|D|C
+        - - - - - -
+        .|.|.|.|D|C
+        - x - x - - 
+        E|r|F|F|F|F
+        - - - - - -
+        Ex.|.|.x.|.
+        - - - - - x
+        E|.|.|.|.|.
+       '''
+
+
+    endx = 3
+    endy = 0
+
+    whale_start_orientation = FACE_UP
+    whale_start_face = NORTH
+
+Looking for solution.. (may take several seconds)
+
+
+SOLUTION
+B right; A right; A right; E up; E up; E up; r up; F left; F left; D down; A right; r right; D down; D down; F right; E down; B left; C down; C down; A right; r right; r up
+MOVE B right
+. B B B . C
+    -      
+A A . . D C
+           
+. . . . D C
+  -   -    
+E r F F F F
+           
+E|. . .|. .
+          - 
+E . . . . .
+
+MOVE A right
+. B B B . C
+    -      
+. A A . D C
+           
+. . . . D C
+  -   -    
+E r F F F F
+           
+E|. . .|. .
+          - 
+E . . . . .
+
+MOVE A right
+. B B B . C
+    -      
+. . A A D C
+           
+. . . . D C
+  -   -    
+E r F F F F
+           
+E|. . .|. .
+          - 
+E . . . . .
+
+MOVE E up
+. B B B . C
+    -      
+. . A A D C
+           
+E . . . D C
+  -   -    
+E r F F F F
+           
+E|. . .|. .
+          - 
+. . . . . .
+
+MOVE E up
+. B B B . C
+    -      
+E . A A D C
+           
+E . . . D C
+  -   -    
+E r F F F F
+           
+.|. . .|. .
+          - 
+. . . . . .
+
+MOVE E up
+E B B B . C
+    -      
+E . A A D C
+           
+E . . . D C
+  -   -    
+. r F F F F
+           
+.|. . .|. .
+          - 
+. . . . . .
+
+MOVE r up
+E B B B . C
+    -      
+E r A A D C
+           
+E r . . D C
+  -   -    
+. . F F F F
+           
+.|. . .|. .
+          - 
+. . . . . .
+
+MOVE F left
+E B B B . C
+    -      
+E r A A D C
+           
+E r . . D C
+  -   -    
+. F F F F .
+           
+.|. . .|. .
+          - 
+. . . . . .
+
+MOVE F left
+E B B B . C
+    -      
+E r A A D C
+           
+E r . . D C
+  -   -    
+F F F F . .
+           
+.|. . .|. .
+          - 
+. . . . . .
+
+MOVE D down
+E B B B . C
+    -      
+E r A A . C
+           
+E r . . D C
+  -   -    
+F F F F D .
+           
+.|. . .|. .
+          - 
+. . . . . .
+
+MOVE A right
+E B B B . C
+    -      
+E r . A A C
+           
+E r . . D C
+  -   -    
+F F F F D .
+           
+.|. . .|. .
+          - 
+. . . . . .
+
+MOVE r right
+E B B B . C
+    -      
+E . r A A C
+           
+E . r . D C
+  -   -    
+F F F F D .
+           
+.|. . .|. .
+          - 
+. . . . . .
+
+MOVE D down
+E B B B . C
+    -      
+E . r A A C
+           
+E . r . . C
+  -   -    
+F F F F D .
+           
+.|. . .|D .
+          - 
+. . . . . .
+
+MOVE D down
+E B B B . C
+    -      
+E . r A A C
+           
+E . r . . C
+  -   -    
+F F F F . .
+           
+.|. . .|D .
+          - 
+. . . . D .
+
+MOVE F right
+E B B B . C
+    -      
+E . r A A C
+           
+E . r . . C
+  -   -    
+. F F F F .
+           
+.|. . .|D .
+          - 
+. . . . D .
+
+MOVE E down
+. B B B . C
+    -      
+E . r A A C
+           
+E . r . . C
+  -   -    
+E F F F F .
+           
+.|. . .|D .
+          - 
+. . . . D .
+
+MOVE B left
+B B B . . C
+    -      
+E . r A A C
+           
+E . r . . C
+  -   -    
+E F F F F .
+           
+.|. . .|D .
+          - 
+. . . . D .
+
+MOVE C down
+B B B . . .
+    -      
+E . r A A C
+           
+E . r . . C
+  -   -    
+E F F F F C
+           
+.|. . .|D .
+          - 
+. . . . D .
+
+MOVE C down
+B B B . . .
+    -      
+E . r A A .
+           
+E . r . . C
+  -   -    
+E F F F F C
+           
+.|. . .|D C
+          - 
+. . . . D .
+
+MOVE A right
+B B B . . .
+    -      
+E . r . A A
+           
+E . r . . C
+  -   -    
+E F F F F C
+           
+.|. . .|D C
+          - 
+. . . . D .
+
+MOVE r right
+B B B . . .
+    -      
+E . . r A A
+           
+E . . r . C
+  -   -    
+E F F F F C
+           
+.|. . .|D C
+          - 
+. . . . D .
+
+MOVE r up
+B B B r . .
+    -      
+E . . . A A
+           
+E . . . . C
+  -   -    
+E F F F F C
+           
+.|. . .|D C
+          - 
+. . . . D .
+
+END of SOLUTION
+
+Total Moves: 22
