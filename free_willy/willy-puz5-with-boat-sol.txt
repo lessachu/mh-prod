@@ -1,0 +1,375 @@
+
+
+    wall_data = '''
+        .x.|.x.|.|.
+        - - - - - -
+        .|.|.x.|.|.                                                                                                                                                                     .
+        - - - - - -
+        .|A|A|.|.|.
+        x x x x - - 
+        .|.|.x.|.|.
+        - - x x x x
+        .|.x.|.|.|.
+        - - - - - -
+        .|.x.|r|r|.
+       '''
+
+
+    endx = 0
+    endy = 0
+
+
+    whale_start_orientation = BELLY_UP
+    whale_start_face = EAST
+
+end is at 0,0
+grid size is 6 x 6
+
+Loaded data
+Looking for solution.. (may take several seconds)
+
+
+SOLUTION
+r left; r left; r up; r up; r right; r right; r right; r up; r up; r left; r down; r down; r right; A right; A right; r up; A right; r left; r left; r down; r left; r left; r up
+MOVE r left
+
+Whale is belly_up facing east
+.|. .|. . .
+           
+. . .|. . .
+           
+. A A . . .
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|r . . .
+
+MOVE r left
+
+Whale is face_up facing west
+.|. .|. . .
+           
+. . .|. . .
+           
+. A A . . .
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+r r|. . . .
+
+MOVE r up
+
+Whale is back_up facing west
+.|. .|. . .
+           
+. . .|. . .
+           
+. A A . . .
+- - - -    
+. . .|. . .
+    - - - - 
+r r|. . . .
+           
+. .|. . . .
+
+MOVE r up
+
+Whale is left_side_up facing west
+.|. .|. . .
+           
+. . .|. . .
+           
+. A A . . .
+- - - -    
+r r .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+
+MOVE r right
+
+Whale is belly_up facing west
+.|. .|. . .
+           
+. . .|. . .
+           
+. A A . . .
+- - - -    
+. . r|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+
+MOVE r right
+
+Whale is face_up facing east
+.|. .|. . .
+           
+. . .|. . .
+           
+. A A . . .
+- - - -    
+. . .|r r .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+
+MOVE r right
+
+Whale is back_up facing east
+.|. .|. . .
+           
+. . .|. . .
+           
+. A A . . .
+- - - -    
+. . .|. . r
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+
+MOVE r up
+
+Whale is tail_up facing east
+.|. .|. . .
+           
+. . .|. . r
+           
+. A A . . r
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+
+MOVE r up
+
+Whale is right_side_up facing south
+.|. .|. . r
+           
+. . .|. . .
+           
+. A A . . .
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+
+MOVE r left
+
+Whale is face_up facing west
+.|. .|r r .
+           
+. . .|. . .
+           
+. A A . . .
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+
+MOVE r down
+
+Whale is back_up facing west
+.|. .|. . .
+           
+. . .|r r .
+           
+. A A . . .
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+
+MOVE r down
+
+Whale is right_side_up facing west
+.|. .|. . .
+           
+. . .|. . .
+           
+. A A r r .
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+
+MOVE r right
+
+Whale is belly_up facing west
+.|. .|. . .
+           
+. . .|. . .
+           
+. A A . . r
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+
+MOVE A right
+.|. .|. . .
+           
+. . .|. . .
+           
+. . A A . r
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+
+MOVE A right
+.|. .|. . .
+           
+. . .|. . .
+           
+. . . A A r
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+
+MOVE r up
+
+Whale is face_up facing east
+.|. .|. . r
+           
+. . .|. . r
+           
+. . . A A .
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+
+MOVE A right
+.|. .|. . r
+           
+. . .|. . r
+           
+. . . . A A
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+
+MOVE r left
+
+Whale is right_side_up facing north
+.|. .|. r .
+           
+. . .|. r .
+           
+. . . . A A
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+
+MOVE r left
+
+Whale is belly_up facing north
+.|. .|r . .
+           
+. . .|r . .
+           
+. . . . A A
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+
+MOVE r down
+
+Whale is left_side_up facing north
+.|. .|. . .
+           
+. . .|. . .
+           
+. . . r A A
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+
+MOVE r left
+
+Whale is face_up facing west
+.|. .|. . .
+           
+. . .|. . .
+           
+. r r . A A
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+
+MOVE r left
+
+Whale is back_up facing west
+.|. .|. . .
+           
+. . .|. . .
+           
+r . . . A A
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+
+MOVE r up
+
+Whale is tail_up facing west
+r|. .|. . .
+           
+r . .|. . .
+           
+. . . . A A
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+
+END of SOLUTION
+
+Total Moves: 23 Whale Moves: 20
