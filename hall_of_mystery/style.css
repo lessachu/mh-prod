@@ -8,6 +8,7 @@
 	text-align: center;
 	font-style: italic;
 	font-size: x-large;
+	margin: 50px;
 }
 
 .chamber {
@@ -17,6 +18,11 @@
 
 .clue-header {
 	font-weight:bold;
+}
+
+.page-element {
+	margin-top: 50px;
+
 }
 
 .puzzle-content div.grid { width: 100%; margin: 0 auto; }		
@@ -40,18 +46,63 @@
 .puzzle-content div.grid table td.rb { border-right: 3px dashed grey;}
 .puzzle-content div.grid table td.filled { background-color: lightgrey;}
 
-div.clues {
-	font-size: %25;
-}
 
-div.clues table td { vertical-align: top; text-align: left; }
+
+div.clues table td { vertical-align: top; text-align: left; font-size: medium; }
 
 .puzzle-content div.print-safe { page-break-inside: avoid; }
+
+
+article {
+  /* We're giving our article a max-width. This isn't needed if a parent already does this.*/
+  max-width: 860px;
+  
+  /* Create a 3 column layout */
+  -webkit-column-count: 3;
+     -moz-column-count: 3;
+     column-count: 3;
+
+  /* Give each column a little added spacing */
+  -webkit-column-gap: 10px;
+     -moz-column-gap: 10px;
+     column-gap: 10px;
+     
+  /* To be able to absolute position the image we need to give the parent a position */
+  position: relative;
+  
+  /* This pulls up the first column of text to align with the image */
+  padding-top: 550px;
+}
+
+article div.grid-layout {
+  /* Absolute position our image */
+  position: absolute;
+
+  /* Place it in the top right cornet */
+  top: 0;
+  right: 0;
+
+  /* Give it a height of 200px, this can of course be change if needed. If you update the height here make sure you also change the padding-top of the article and the negative margin later down. */
+  height: 550px;
+  
+  /* We only want the image to spread 3 columns in width, that's 75% of the entire width. We also use 10px (half of the column-gap). */
+  width: calc(66% - 10px);
+
+}
+
+/* Give the first paragraph a negative margin to pull it back up. (right now we're only using one parapgrah but if you'd want more in the future lets be specific here) */
+article h1:first-of-type {
+  margin-top: -550px;
+}
 
 @media print {
 	.puzzle-content div.print-safe { page-break-inside: avoid; margin-bottom: 1em; }
 	.puzzle-content div.clues { display: block; columns: 2em 4; }
 	.puzzle-content div.clues div { width: 100%; }
-	.puzzle-content div.grid table td { width: 35px; height: 35px; font-size: 12px; }
-	.chamber { page-break-before: always;}
+	.puzzle-content div.grid table td { width: 25px; height: 25px; font-size: 12px; }
+	div.clues table td { font-size: 75%; }
+	article { padding-top:400px;}
+	article div.grid-layout { height:400px; }
+	article h1:first-of-type { margin-top: -400px; }
+	.page-element { margin:50px; page-break-before: always;}
 }
