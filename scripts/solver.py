@@ -614,16 +614,20 @@ class Solver(object):
         while len(Q) != 0:
   #          print "Q : " + str(Q)
             moves, cars = Q.pop(0)
-
+            num_whale_moves = 0;
  #           print "checking moves, cars:" + str(moves) + " " + str(cars)
 
+            for move in moves:
+                if move[0] == 'r':
+                    num_whale_moves = num_whale_moves + 1;
+
             if self.is_solved(cars):
-                if len(moves) < min_moves:
+                if num_whale_moves < min_moves:
                     is_doubled = False
-                    min_moves = len(moves)
+                    min_moves = num_whale_moves
                     best_moves = deepcopy(moves)
-                elif len(moves) == min_moves:
-                    print(solver.format_steps(solver.cars, moves))
+                elif num_whale_moves == min_moves:
+                    #print(solver.format_steps(solver.cars, moves))
                     is_doubled = True
 
             for new_moves, new_cars in self.get_all_states(cars):
@@ -637,6 +641,7 @@ class Solver(object):
             raise CanNonSolveException('Can not solve')
         elif is_doubled:
             print "Multiple best paths found"
+            return best_moves
  #           raise CanNonSolveException('multiple best paths found')
         else:
             return best_moves
@@ -725,50 +730,118 @@ class Solver(object):
 
 if __name__ == '__main__':
 
-# puzzle 3
+    # # puzzle 5
     # wall_data = '''
-    #     B|B|B|.|.|C
-    #     - - x - - -
-    #     A|A|.|.|D|C
+    #     .x.|.x.|.|.
     #     - - - - - -
-    #     .|.|.|.|D|C
-    #     - x - x - - 
-    #     E|r|F|F|F|F
+    #     .|.|.x.|.|.
     #     - - - - - -
-    #     Ex.|.|.x.|.
-    #     - - - - - x
-    #     E|.|.|.|.|.
+    #     .|A|A|.|.|.
+    #     x x x x - -
+    #     .|.|.x.|.|.
+    #     - - x x x x
+    #     .|.x.|.|.|.
+    #     - - - - - -
+    #     .|.xr|.|.|.
     #    '''
 
 
-    # endx = 3
+    # endx = 0
     # endy = 0
 
     # whale_start_orientation = FACE_UP
-    # whale_start_face = NORTH
+    # whale_start_face = WEST
 
+# # puzzle 4
+#     wall_data = '''
+#         .|.|.|A|.|.
+#         - x - - - -
+#         .|.|.|A|.|.
+#         x x x - x -
+#         .|.|.|A|.x.
+#         - - - - - x
+#         B|B|.|.|.|.
+#         - x - - - -
+#         .|.|.|C|C|C
+#         - - - x - -
+#         .|.|.|.|r|r
+#        '''
+
+
+#     endx = 2
+#     endy = 0
+
+#     whale_start_orientation = BACK_UP
+#     whale_start_face = WEST
+
+
+# # puzzle 2
+#     wall_data = '''
+#         .|.|.|.x.|.
+#         - x x x - -
+#         .|.|A|A|.|.
+#         - - - - - -
+#         .|.|.xB|.|.
+#         - - x - - -
+#         E|.|.|B|.|.
+#         - - - x - -
+#         E|.|.|.|C|C
+#         - - - - - x
+#         .|D|D|.x.|r
+#        '''
+
+
+#     endx = 3
+#     endy = 0
+
+#     whale_start_orientation = FACE_UP
+#     whale_start_face = NORTH
+
+# puzzle 3
     wall_data = '''
-        .|.|.|A|.|.
-        - x - - - -
-        .|.|.|A|.|.                                                                                                                                                                     .
-        x x x - x -
-        .|.|.|A|.x.
-        - - - - - x 
-        C|C|.|.|.|.
-        - x - - - -
-        .|.|.|B|B|B
-        - - - x - -
-        .|.|.|.|r|r
+        B|B|B|.|.|C
+        - - x - - -
+        A|A|.|.|D|C
+        - - - - - -
+        .|.|.|.|D|C
+        - x - x - - 
+        E|r|F|F|F|F
+        - - - - - -
+        Ex.|.|.x.|.
+        - - - - - x
+        E|.|.|.|.|.
        '''
 
 
-    endx = 2
+    endx = 3
     endy = 0
 
-    print "end is at " + str(endx) + "," + str(endy)
+    whale_start_orientation = FACE_UP
+    whale_start_face = NORTH
 
-    whale_start_orientation = BACK_UP
-    whale_start_face = WEST
+    #puzzle 1
+    # wall_data = '''
+    #     .|.|.x.|.xB
+    #     - - x - - -
+    #     .|.|A|A|.|B                                                                                                                                                                     .
+    #     - - - - - -
+    #     r|.x.|C|D|.
+    #     - - x - - - 
+    #     .|.|.xC|D|.
+    #     - - - x - x
+    #     .|.|.|.|.|.
+    #     - - - - - -
+    #     E|E|E|.|.|.
+    #    '''
+
+
+    # endx = 5
+    # endy = 0
+
+    # print "end is at " + str(endx) + "," + str(endy)
+
+    # whale_start_orientation = TAIL_UP
+    # whale_start_face = SOUTH
 
     # wall_data = '''
     #    .|.|.
