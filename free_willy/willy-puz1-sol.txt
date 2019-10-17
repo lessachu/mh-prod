@@ -1,0 +1,338 @@
+SOLUTION
+E right; E right; E right; r up; r right; r down; r down; r right; r down; r left; r up; r up; r up; r up; r up; A left; r right; r right; r down; B down; B down; r right; r up
+MOVE E right
+. . .|. .|B
+    -      
+. . A A . B
+           
+r .|. C D .
+    -      
+. . .|C D .
+      -   - 
+. . . . . .
+           
+. E E E . .
+
+MOVE E right
+. . .|. .|B
+    -      
+. . A A . B
+           
+r .|. C D .
+    -      
+. . .|C D .
+      -   - 
+. . . . . .
+           
+. . E E E .
+
+MOVE E right
+. . .|. .|B
+    -      
+. . A A . B
+           
+r .|. C D .
+    -      
+. . .|C D .
+      -   - 
+. . . . . .
+           
+. . . E E E
+
+MOVE r up
+
+Whale is tail_up facing south
+r . .|. .|B
+    -      
+r . A A . B
+           
+. .|. C D .
+    -      
+. . .|C D .
+      -   - 
+. . . . . .
+           
+. . . E E E
+
+MOVE r right
+
+Whale is back_up facing south
+. r .|. .|B
+    -      
+. r A A . B
+           
+. .|. C D .
+    -      
+. . .|C D .
+      -   - 
+. . . . . .
+           
+. . . E E E
+
+MOVE r down
+
+Whale is right_side_up facing south
+. . .|. .|B
+    -      
+. . A A . B
+           
+. r|. C D .
+    -      
+. . .|C D .
+      -   - 
+. . . . . .
+           
+. . . E E E
+
+MOVE r down
+
+Whale is tail_up facing east
+. . .|. .|B
+    -      
+. . A A . B
+           
+. .|. C D .
+    -      
+. r .|C D .
+      -   - 
+. r . . . .
+           
+. . . E E E
+
+MOVE r right
+
+Whale is left_side_up facing north
+. . .|. .|B
+    -      
+. . A A . B
+           
+. .|. C D .
+    -      
+. . r|C D .
+      -   - 
+. . r . . .
+           
+. . . E E E
+
+MOVE r down
+
+Whale is belly_up facing north
+. . .|. .|B
+    -      
+. . A A . B
+           
+. .|. C D .
+    -      
+. . .|C D .
+      -   - 
+. . . . . .
+           
+. . r E E E
+
+MOVE r left
+
+Whale is face_up facing south
+. . .|. .|B
+    -      
+. . A A . B
+           
+. .|. C D .
+    -      
+. . .|C D .
+      -   - 
+. . . . . .
+           
+r r . E E E
+
+MOVE r up
+
+Whale is left_side_up facing west
+. . .|. .|B
+    -      
+. . A A . B
+           
+. .|. C D .
+    -      
+. . .|C D .
+      -   - 
+r r . . . .
+           
+. . . E E E
+
+MOVE r up
+
+Whale is belly_up facing west
+. . .|. .|B
+    -      
+. . A A . B
+           
+. .|. C D .
+    -      
+r r .|C D .
+      -   - 
+. . . . . .
+           
+. . . E E E
+
+MOVE r up
+
+Whale is right_side_up facing west
+. . .|. .|B
+    -      
+. . A A . B
+           
+r r|. C D .
+    -      
+. . .|C D .
+      -   - 
+. . . . . .
+           
+. . . E E E
+
+MOVE r up
+
+Whale is back_up facing west
+. . .|. .|B
+    -      
+r r A A . B
+           
+. .|. C D .
+    -      
+. . .|C D .
+      -   - 
+. . . . . .
+           
+. . . E E E
+
+MOVE r up
+
+Whale is left_side_up facing west
+r r .|. .|B
+    -      
+. . A A . B
+           
+. .|. C D .
+    -      
+. . .|C D .
+      -   - 
+. . . . . .
+           
+. . . E E E
+
+MOVE A left
+r r .|. .|B
+    -      
+. A A . . B
+           
+. .|. C D .
+    -      
+. . .|C D .
+      -   - 
+. . . . . .
+           
+. . . E E E
+
+MOVE r right
+
+Whale is belly_up facing west
+. . r|. .|B
+    -      
+. A A . . B
+           
+. .|. C D .
+    -      
+. . .|C D .
+      -   - 
+. . . . . .
+           
+. . . E E E
+
+MOVE r right
+
+Whale is face_up facing east
+. . .|r r|B
+    -      
+. A A . . B
+           
+. .|. C D .
+    -      
+. . .|C D .
+      -   - 
+. . . . . .
+           
+. . . E E E
+
+MOVE r down
+
+Whale is back_up facing east
+. . .|. .|B
+    -      
+. A A r r B
+           
+. .|. C D .
+    -      
+. . .|C D .
+      -   - 
+. . . . . .
+           
+. . . E E E
+
+MOVE B down
+. . .|. .|.
+    -      
+. A A r r B
+           
+. .|. C D B
+    -      
+. . .|C D .
+      -   - 
+. . . . . .
+           
+. . . E E E
+
+MOVE B down
+. . .|. .|.
+    -      
+. A A r r .
+           
+. .|. C D B
+    -      
+. . .|C D B
+      -   - 
+. . . . . .
+           
+. . . E E E
+
+MOVE r right
+
+Whale is left_side_up facing east
+. . .|. .|.
+    -      
+. A A . . r
+           
+. .|. C D B
+    -      
+. . .|C D B
+      -   - 
+. . . . . .
+           
+. . . E E E
+
+MOVE r up
+
+Whale is tail_up facing south
+. . .|. .|r
+    -      
+. A A . . .
+           
+. .|. C D B
+    -      
+. . .|C D B
+      -   - 
+. . . . . .
+           
+. . . E E E
+
+END of SOLUTION
+
+Total Moves: 23 Whale Moves: 17
