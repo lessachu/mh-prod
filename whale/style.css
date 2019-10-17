@@ -1,0 +1,13 @@
+/* styles specific to this puzzle */
+.moves td {
+ padding: 50px;
+ vertical-align: middle;
+}
+
+.kids img {
+	width: 75px
+}
+
+.grids td {
+ padding: 10px;
+}

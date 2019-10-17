@@ -1,0 +1,1215 @@
+<head>
+  <link rel=stylesheet href="style.css" />
+</head>
+
+<h2>How to Solve</h2>
+
+<p>This puzzle adapts rules from the game Rush Hour, with the Willy the whale replacing the red car (and using different move logic for Willy).
+
+<p>For each of the grids, first find the path that gets Willy to the open sea in the fewest number of moves.  The solutions are as follows:
+
+<div class="grids">
+<h3>GRID 1</h3>
+Total Moves:  Whale Moves: <br>
+<img src="assets/grid1.png" width=200>
+<table>
+	<tr>
+		<td>
+			<pre>
+			</pre>
+		</td>
+		<td>
+			<pre>
+			</pre>
+		</td>
+		<td>
+			<pre>
+			</pre>
+		</td>
+		<td>
+			<pre>
+			</pre>
+		</td>
+		<td>
+			<pre>
+			</pre>
+		</td>
+	</tr>
+</table>
+
+<h3>GRID 2</h3>
+Total Moves: 34 Whale Moves: 21<br>
+<img src="assets/grid2.png" width=200>
+<table>
+	<tr>
+		<td>
+<pre>
+1-2. Move C left twice
+. . . .|. .
+  - - -    
+. . B B . .
+           
+. . .|A . .
+    -      
+D . . A . .
+      -    
+D . C C . .
+          - 
+. E E .|. W
+</pre>
+</td>
+<td>
+<pre>
+3. Move E left
+. . . .|. .
+  - - -    
+. . B B . .
+           
+. . .|A . .
+    -      
+D . . A . .
+      -    
+D . C C . .
+          - 
+E E . .|. W
+</pre>
+</td>
+<td>
+<pre>
+4-6. Move D up three times
+D . . .|. .
+  - - -    
+D . B B . .
+           
+. . .|A . .
+    -      
+. . . A . .
+      -    
+. . C C . .
+          - 
+E E . .|. W
+</pre>
+</td>
+<td>
+<pre>
+7. Willy jumps up
+D . . .|. .
+  - - -    
+D . B B . .
+           
+. . .|A . .
+    -      
+. . . A . W
+      -    
+. . C C . W
+          - 
+E E . .|. .
+</pre>
+</td>
+<td>
+<pre>
+8-9. Move Willy up twice
+D . . .|. W
+  - - -    
+D . B B . W
+           
+. . .|A . .
+    -      
+. . . A . .
+      -    
+. . C C . .
+          - 
+E E . .|. .
+</pre>
+</td>
+	</tr>
+	<tr>
+<td>
+<pre>
+10. Roll Willy left
+D . . .|W .
+  - - -    
+D . B B W .
+           
+. . .|A . .
+    -      
+. . . A . .
+      -    
+. . C C . .
+          - 
+E E . .|. .
+</pre>
+</td>
+<td>
+<pre>
+11-13. Move Willy
+down three times
+D . . .|. .
+  - - -    
+D . B B . .
+           
+. . .|A . .
+    -      
+. . . A . .
+      -    
+. . C C . .
+          - 
+E E . .|W .
+
+</pre>
+</td>
+<td>
+<pre>
+14-15. Move C right twice
+D . . .|. .
+  - - -    
+D . B B . .
+           
+. . .|A . .
+    -      
+. . . A . .
+      -    
+. . . . C C
+          - 
+E E . .|W .
+</pre>
+</td>
+<td>
+<pre>
+16. Willy jumps over 
+the left wall
+D . . .|. .
+  - - -    
+D . B B . .
+           
+. . .|A . .
+    -      
+. . . A . .
+      -    
+. . . . C C
+          - 
+E E W W|. .
+</pre>
+</td>
+<td>
+<pre>
+17. Roll Willy up
+D . . .|. .
+  - - -    
+D . B B . .
+           
+. . .|A . .
+    -      
+. . . A . .
+      -    
+. . W W C C
+          - 
+E E . .|. .
+</pre>
+</td>
+</tr>
+	<tr>
+		<td>
+<pre>
+18. Move E right
+D . . .|. .
+  - - -    
+D . B B . .
+           
+. . .|A . .
+    -      
+. . . A . .
+      -    
+. . W W C C
+          - 
+. E E .|. .
+</pre>
+</td>
+<td>
+<pre>
+19. Move Willy left
+D . . .|. .
+  - - -    
+D . B B . .
+           
+. . .|A . .
+    -      
+. . . A . .
+      -    
+. W . . C C
+          - 
+. E E .|. .
+</pre>
+</td>
+<td>
+<pre>
+20. Move Willy up
+D . . .|. .
+  - - -    
+D . B B . .
+           
+. W .|A . .
+    -      
+. W . A . .
+      -    
+. . . . C C
+          - 
+. E E .|. .
+</pre>
+</td>
+<td>
+<pre>
+21. Roll Willy left
+D . . .|. .
+  - - -    
+D . B B . .
+           
+W . .|A . .
+    -      
+W . . A . .
+      -    
+. . . . C C
+          - 
+. E E .|. .
+</pre>
+</td>
+<td>
+<pre>
+22. Move Willy down
+D . . .|. .
+  - - -    
+D . B B . .
+           
+. . .|A . .
+    -      
+. . . A . .
+      -    
+W . . . C C
+          - 
+. E E .|. .
+</pre>
+</td>
+	</tr>
+<tr>
+	<td>
+	<pre>
+23-24. Move D down twice
+. . . .|. .
+  - - -    
+. . B B . .
+           
+D . .|A . .
+    -      
+D . . A . .
+      -    
+W . . . C C
+          - 
+. E E .|. .
+	</pre>
+</td>
+	<td>
+	<pre>
+25. Move Willy right
+. . . .|. .
+  - - -    
+. . B B . .
+           
+D . .|A . .
+    -      
+D . . A . .
+      -    
+. W W . C C
+          - 
+. E E .|. .
+	</pre>
+</td>
+	<td>
+	<pre>
+26-27. Move D down twice
+. . . .|. .
+  - - -    
+. . B B . .
+           
+. . .|A . .
+    -      
+. . . A . .
+      -    
+D W W . C C
+          - 
+D E E .|. .
+	</pre>
+</td>
+	<td>
+	<pre>
+28. Roll Willy up
+. . . .|. .
+  - - -    
+. . B B . .
+           
+. . .|A . .
+    -      
+. W W A . .
+      -    
+D . . . C C
+          - 
+D E E .|. .
+
+	</pre>
+</td>
+	<td>
+	<pre>
+29. Move Willy left
+. . . .|. .
+  - - -    
+. . B B . .
+           
+. . .|A . .
+    -      
+W . . A . .
+      -    
+D . . . C C
+          - 
+D E E .|. .
+
+	</pre>
+</td>
+</tr>
+<tr>
+	<td>
+		<pre>
+30-31. Move Willy up twice
+W . . .|. .
+  - - -    
+. . B B . .
+           
+. . .|A . .
+    -      
+. . . A . .
+      -    
+D . . . C C
+          - 
+D E E .|. .
+		</pre>
+	</td>
+<td>
+	<pre>
+32-33. Move Willy right twice
+. . . W|. .
+  - - -    
+. . B B . .
+           
+. . .|A . .
+    -      
+. . . A . .
+      -    
+D . . . C C
+          - 
+D E E .|. .
+</pre>
+</td>
+	<td>
+		<pre>
+34. Move Willy up and off the board
+. . . .|. .
+  - - -    
+. . B B . .
+           
+. . .|A . .
+    -      
+. . . A . .
+      -    
+D . . . C C
+          - 
+D E E .|. .
+		</pre>
+	</td>
+</tr>
+</table>
+
+<h3>GRID 3</h3>
+Total Moves: 23 Whale Moves: 5<br>
+<img src="assets/grid3.png" width=200>
+<table>
+	<tr>
+		<td>
+			<pre>
+1. Move B right
+. B B B . C
+    -      
+A A . . D C
+           
+. . . . D C
+  -   -    
+E W F F F F
+           
+E|. . .|. .
+          - 
+E . . . . .
+
+			</pre>
+		</td>
+		<td>
+			<pre>
+2-3. Move A right twice
+. B B B . C
+    -      
+. . A A D C
+           
+. . . . D C
+  -   -    
+E W F F F F
+           
+E|. . .|. .
+          - 
+E . . . . .
+			</pre>
+		</td>
+		<td>
+			<pre>
+4-6. Move E up three times
+E B B B . C
+    -      
+E . A A D C
+           
+E . . . D C
+  -   -    
+. W F F F F
+           
+.|. . .|. .
+          - 
+. . . . . .
+			</pre>
+		</td>
+		<td>
+			<pre>
+7. Jump Willy up
+E B B B . C
+    -      
+E W A A D C
+           
+E W . . D C
+  -   -    
+. . F F F F
+           
+.|. . .|. .
+          - 
+. . . . . .
+			</pre>
+		</td>
+		<td>
+			<pre>
+8-9. Move F left twice
+E B B B . C
+    -      
+E W A A D C
+           
+E W . . D C
+  -   -    
+F F F F . .
+           
+.|. . .|. .
+          - 
+. . . . . .
+			</pre>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<pre>
+10. Move D down
+E B B B . C
+    -      
+E W A A . C
+           
+E W . . D C
+  -   -    
+F F F F D .
+           
+.|. . .|. .
+          - 
+. . . . . .
+			</pre>
+		</td>
+		<td>
+			<pre>
+11. Move A right
+E B B B . C
+    -      
+E W . A A C
+           
+E W . . D C
+  -   -    
+F F F F D .
+           
+.|. . .|. .
+          - 
+. . . . . .
+			</pre>
+		</td>
+		<td>
+			<pre>
+12. Roll Willy right
+E B B B . C
+    -      
+E . W A A C
+           
+E . W . D C
+  -   -    
+F F F F D .
+           
+.|. . .|. .
+          - 
+. . . . . .
+			</pre>
+		</td>
+		<td>
+			<pre>
+13-14. Move D down twice
+E B B B . C
+    -      
+E . W A A C
+           
+E . W . . C
+  -   -    
+F F F F . .
+           
+.|. . .|D .
+          - 
+. . . . D . 
+			</pre>
+		</td>
+		<td>
+			<pre>
+15. Move F right
+E B B B . C
+    -      
+E . W A A C
+           
+E . W . . C
+  -   -    
+. F F F F .
+           
+.|. . .|D .
+          - 
+. . . . D .
+			</pre>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<pre>
+16. Move E down
+. B B B . C
+    -      
+E . W A A C
+           
+E . W . . C
+  -   -    
+E F F F F .
+           
+.|. . .|D .
+          - 
+. . . . D .
+			</pre>
+		</td>
+		<td>
+			<pre>
+17. Move B left
+B B B . . C
+    -      
+E . W A A C
+           
+E . W . . C
+  -   -    
+E F F F F .
+           
+.|. . .|D .
+          - 
+. . . . D .
+			</pre>
+		</td>
+		<td>
+			<pre>
+18-19. Move C down twice
+B B B . . .
+    -      
+E . W A A .
+           
+E . W . . C
+  -   -    
+E F F F F C
+           
+.|. . .|D C
+          - 
+. . . . D .
+			</pre>
+		</td>
+		<td>
+			<pre>
+20. Move A right
+B B B . . .
+    -      
+E . W . A A
+           
+E . W . . C
+  -   -    
+E F F F F C
+           
+.|. . .|D C
+          - 
+. . . . D .
+			</pre>
+		</td>
+		<td>
+			<pre>
+21. Roll Willy right
+B B B . . .
+    -      
+E . . W A A
+           
+E . . W . C
+  -   -    
+E F F F F C
+           
+.|. . .|D C
+          - 
+. . . . D .
+			</pre>
+		</td>
+	</tr>
+<tr>
+	<td>
+		<pre>
+22-23. Move Willy up twice 
+B B B . . .
+    -      
+E . . . A A
+           
+E . . . . C
+  -   -    
+E F F F F C
+           
+.|. . .|D C
+          - 
+. . . . D .
+		</pre>
+	</td>
+</tr>
+
+</table>
+<h3>GRID 4</h3>
+Total Moves: 26 Whale Moves: 19 <br>
+<img src="assets/grid4.png" width=200>
+<table>
+	<tr>
+		<td>
+			<pre>
+1-3. MOVE C right three times
+. . . A . .
+  -        
+. . . A . .
+- - -   -  
+. . . A .|.
+          - 
+. . . C C .
+  -        
+. . . B B B
+      -    
+. . . . W W
+			</pre>
+		</td>
+		<td>
+			<pre>
+4-6. Move Willy left three times
+. . . A . .
+  -        
+. . . A . .
+- - -   -  
+. . . A .|.
+          - 
+. . . C C .
+  -        
+. . . B B B
+      -    
+W . . . . .
+			</pre>
+		</td>
+		<td>
+			<pre>
+7-8. Move Willy up twice
+. . . A . .
+  -        
+. . . A . .
+- - -   -  
+W . . A .|.
+          - 
+. . . C C .
+  -        
+. . . B B B
+      -    
+. . . . . .
+			</pre>
+		</td>
+		<td>
+			<pre>
+9. Move Willy right
+. . . A . .
+  -        
+. . . A . .
+- - -   -  
+. W W A .|.
+          - 
+. . . C C .
+  -        
+. . . B B B
+      -    
+. . . . . .
+			</pre>
+		</td>
+		<td>
+			<pre>
+10. Roll Willy down
+. . . A . .
+  -        
+. . . A . .
+- - -   -  
+. . . A .|.
+          - 
+. W W C C .
+  -        
+. . . B B B
+      -    
+. . . . . .
+			</pre>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<pre>
+11. Move Willy left
+. . . A . .
+  -        
+. . . A . .
+- - -   -  
+. . . A .|.
+          - 
+W . . C C .
+  -        
+. . . B B B
+      -    
+. . . . . .
+			</pre>
+		</td>
+		<td>
+			<pre>
+12-13. Move C left twice
+. . . A . .
+  -        
+. . . A . .
+- - -   -  
+. . . A .|.
+          - 
+W C C . . .
+  -        
+. . . B B B
+      -    
+. . . . . . 
+			</pre>
+		</td>
+		<td>
+			<pre>
+14. Move Willy down
+. . . A . .
+  -        
+. . . A . .
+- - -   -  
+. . . A .|.
+          - 
+. C C . . .
+  -        
+W . . B B B
+      -    
+W . . . . .
+			</pre>
+		</td>
+		<td>
+			<pre>
+15. Move C left
+. . . A . .
+  -        
+. . . A . .
+- - -   -  
+. . . A .|.
+          - 
+C C . . . .
+  -        
+W . . B B B
+      -    
+W . . . . .
+			</pre>
+		</td>
+		<td>
+			<pre>
+16-17. Roll Willy right twice
+. . . A . .
+  -        
+. . . A . .
+- - -   -  
+. . . A .|.
+          - 
+C C . . . .
+  -        
+. . W B B B
+      -    
+. . W . . .
+
+			</pre>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<pre>
+18. Move Willy up
+. . . A . .
+  -        
+. . . A . .
+- - -   -  
+. . . A .|.
+          - 
+C C W . . .
+  -        
+. . . B B B
+      -    
+. . . . . .
+			</pre>
+		</td>
+		<td>
+			<pre>
+19-20. Move Willy right twice
+. . . A . .
+  -        
+. . . A . .
+- - -   -  
+. . . A .|.
+          - 
+C C . . . W
+  -        
+. . . B B B
+      -    
+. . . . . .
+
+			</pre>
+		</td>
+		<td>
+			<pre>
+21-22. Move Willy up twice
+. . . A . W
+  -        
+. . . A . .
+- - -   -  
+. . . A .|.
+          - 
+C C . . . .
+  -        
+. . . B B B
+      -    
+. . . . . .
+			</pre>
+		</td>
+		<td>
+			<pre>
+23. Move A down
+. . . . . W
+  -        
+. . . A . .
+- - -   -  
+. . . A .|.
+          - 
+C C . A . .
+  -        
+. . . B B B
+      -    
+. . . . . .
+			</pre>
+		</td>
+		<td>
+			<pre>
+24-25. Move Willy left twice
+. . W . . .
+  -        
+. . . A . .
+- - -   -  
+. . . A .|.
+          - 
+C C . A . .
+  -        
+. . . B B B
+      -    
+. . . . . .
+			</pre>
+		</td>
+	</tr>
+<tr>
+	<td>
+		<pre>
+26. Move Willy up off the board
+. . . . . .
+  -        
+. . . A . .
+- - -   -  
+. . . A .|.
+          - 
+C C . A . .
+  -        
+. . . B B B
+      -    
+. . . . . .
+		</pre>
+	</td>
+</tr>
+</table>
+<h3>GRID 5</h3>
+Total Moves: 24  Whale Moves: 21 <br>
+<img src="assets/grid5.png" width=200>
+<table>
+	<tr>
+		<td>
+			<pre>
+1-2. Move Willy left twice
+.|. .|. . .
+           
+. . .|. . .
+           
+. A A . . .
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+W W|. . . .
+			</pre>
+		</td>
+		<td>
+			<pre>
+2-4. Roll Willy up twice
+.|. .|. . .
+           
+. . .|. . .
+           
+. A A . . .
+- - - -    
+W W .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+
+			</pre>
+		</td>
+		<td>
+			<pre>
+5-7. Move Willy right three times
+.|. .|. . .
+           
+. . .|. . .
+           
+. A A . . .
+- - - -    
+. . .|. . W
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+			</pre>
+		</td>
+		<td>
+			<pre>
+8-9. Move Willy up twice
+.|. .|. . W
+           
+. . .|. . .
+           
+. A A . . .
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+			</pre>
+		</td>
+		<td>
+			<pre>
+10. Move Willy left
+.|. .|W W .
+           
+. . .|. . .
+           
+. A A . . .
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+			</pre>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<pre>
+11-12. Roll Willy down twice
+.|. .|. . .
+           
+. . .|. . .
+           
+. A A W W .
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+
+			</pre>
+		</td>
+		<td>
+			<pre>
+13. Move Willy right
+.|. .|. . .
+           
+. . .|. . .
+           
+. A A . . W
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+			</pre>
+		</td>
+		<td>
+			<pre>
+14-15. Move A right twice
+.|. .|. . .
+           
+. . .|. . .
+           
+. . . A A W
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+
+			</pre>
+		</td>
+		<td>
+			<pre>
+16. Move Willy up
+.|. .|. . W
+           
+. . .|. . W
+           
+. . . A A .
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+			</pre>
+		</td>
+		<td>
+			<pre>
+17. Move A right
+.|. .|. . W
+           
+. . .|. . W
+           
+. . . . A A
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+			</pre>
+		</td>
+	</tr>
+	<tr>
+		<td>
+			<pre>
+18-19. Roll Willy left twice
+.|. .|W . .
+           
+. . .|W . .
+           
+. . . . A A
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+			</pre>
+		</td>
+		<td>
+			<pre>
+20. Move Willy down
+.|. .|. . .
+           
+. . .|. . .
+           
+. . . W A A
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+			</pre>
+		</td>
+		<td>
+			<pre>
+21-22. Move Willy left twice
+.|. .|. . .
+           
+. . .|. . .
+           
+W . . . A A
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+			</pre>
+		</td>
+		<td>
+			<pre>
+23-24. Move Willy up twice
+.|. .|. . .
+           
+. . .|. . .
+           
+. . . . A A
+- - - -    
+. . .|. . .
+    - - - - 
+. .|. . . .
+           
+. .|. . . .
+			</pre>
+		</td>
+	</tr>
+
+</table>
+</div>
+
+<p>
+For the first extract, count the number of moves that Willy has to make in each grid.  Converting each to a letter spells out the answer QUEST.
+
+For the second extraction, note that Willy jumps over at least one sea wall in each grid and that each sea wall has a child standing on it. 
