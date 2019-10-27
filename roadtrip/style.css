@@ -1,13 +1,19 @@
 /* styles specific to this puzzle */
-#puzz #portrait {
+.puzz {
     text-align: center;
-    background-color: beige;
+    background-color: red;
 }
 
-.emojiTable, .emojiSpan, .authorSpan  {
- font-size: 48px;
+.title  {
+	font-size:25px;
 }
 
-.authorTable {
- font-size: 24px;
+#puzz #roadtrip_table1 img { 
+	display: block; 
+}
+
+#puzz #emojiDestination {
+	font-size:25px;
+	font-weight:bold;
+	padding:20px;
 }
