@@ -17,3 +17,19 @@
 	font-weight:bold;
 	padding:20px;
 }
+
+#puzz #author1 {
+	font-size:25px;
+	font-weight:bold;
+	display:inline-block;
+	padding-top:20px;
+	padding-bottom:20px;
+}
+
+#puzz #authorDestination {
+	font-family: monospace;
+	white-space: pre-line;
+	font-size:20px;
+}
+
+
