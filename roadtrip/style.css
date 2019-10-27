@@ -1,0 +1,13 @@
+/* styles specific to this puzzle */
+#puzz #portrait {
+    text-align: center;
+    background-color: beige;
+}
+
+.emojiTable, .emojiSpan, .authorSpan  {
+ font-size: 48px;
+}
+
+.authorTable {
+ font-size: 24px;
+}

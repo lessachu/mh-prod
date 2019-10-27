@@ -1,0 +1,22 @@
+# only lowercase, number, _ (no spaces)
+shortname: roadtrip
+
+# Display version of title. No HTML <tags>
+title: Roadtrip
+
+#  Who to call in emergency. Make sure you're in roster!
+oncall: michael_springer@hms.harvard.edu
+authors: [Mike Springer]
+
+# in http://ptron.../puzzle.php?pid=2 , the 2
+puzzletron_id: 31
+
+
+# (For Safari-round multi-answer puzzles, could be more than one)
+answers:
+ - 🏐
+
+# Things the answer checker responds to (and the responses),
+# though they're not the solution. E.g., "Bring us cookies
+# (so we can tell you the real answer)". Response can have HTML.
+# It's probably displayed in small area, so don't get too wild.
