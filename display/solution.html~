@@ -1,0 +1,195 @@
+<p class="authors">Jan Chong and Ian Tullis
+
+<h2>Hints:</h2>
+
+<ol>
+  <li>Ignore the colors for now.
+  <li>All of the triplets can be re-arranged to form lines (with a little extra) from a Scottish play.
+  <li>As the extra letters indicate, you should apply the colors to a color checker that shares a name with a famous Scottish play.
+  <li>Index each text color to a letter, using the Macbeth ColorChecker
+</ol>
+
+<h2>How to Solve</h2>
+
+<p>Start with each line of triplets, ignoring the colors for now.  Each set of triplets can be arranged to form a line from the play Macbeth, with an extra letter randomly inserted.</p>  
+
+<table border=1 cellpadding=3px> 
+<tr><th>Triplets</th><th>Line</th><th>Scene</th><th>Extra Letter</th></tr>
+<tr>
+	<td>A EAC FLY FLY FLY HER LEA NCE ODF OTR YFL YGO</td>
+	<td>O, treachery! Fly, good Fleance, fly, fly, fly!</td>
+	<td>14</td>
+	<td>A</td>
+</tr>
+<tr>
+	<td>ACK AND DEE EEM ESI HTS LET LIG LPD NOT RES YBL</td>
+	<td>Let not light see my black and deep desires: </td>
+	<td>4</td>
+	<td>L</td>
+</tr>
+<tr>
+	<td>AKT ARB DAN DDE ERS H ING LAM LOO OFB ORO SEC THO USH</td>
+	<td>Those clamorous harbingers of blood and death.</td>
+	<td>26</td>
+	<td>K</td>
+</tr>
+<tr>
+	<td>ALC AND E HTV IAN LAT LKD NQU OWA RIG TBA THE TOO</td>
+	<td>And the right-valiant Banquo walk'd too late; </td>
+	<td>17</td>
+	<td>C</td>
+</tr>
+<tr>
+	<td>ALL D ERN ISS LAS LIE OFK OWG PDG SAN SES UPP</td>
+	<td>Of kerns and gallowglasses is supplied</td>
+	<td>2</td>
+	<td>P</td>
+</tr>
+<tr>
+	<td>ALS AOV ARI CEI CIO EDE L LUX OUS TFU URI USF</td>
+	<td>Luxurious, avaricious, false, deceitful, </td>
+	<td>20</td>
+	<td>O</td>
+</tr>
+<tr>
+	<td>ANB APP CHT DRU ERU ETH GGE HOU LIK R ROA SSI TEA</td>
+	<td>Approach thou like the rugged Russian bear,</td>
+	<td>15</td>
+	<td>T</td>
+</tr>
+<tr>
+	<td>AND ARU ASO DER EAL ELL GTH MBO MUR N RIN TRE</td>
+	<td>Ring the alarum-bell. Murder and treason! </td>
+	<td>10</td>
+	<td>O</td>
+</tr>
+<tr>
+	<td>ANG APO DE OPP OUN REH ROF ROU SAV SDR THE</td>
+	<td>There hangs a vaporous drop profound;</td>
+	<td>16</td>
+	<td>E</td>
+</tr>
+<tr>
+	<td>ARD AVO ECR EEP GHT HOU IHE MET NOM ORE RIC YSL</td>
+	<td>Methought I heard a voice cry 'Sleep no more! </td>
+	<td>9</td>
+	<td>R</td>
+</tr>
+<tr>
+	<td>ARE ATE CLE EMI GSA HSW NDD OUG PT RRU SRH VES WOL</td>
+	<td>Shoughs, water-rugs and demi-wolves, are clept</td>
+	<td>12</td>
+	<td>R</td>
+</tr>
+<tr>
+	<td>ATA BYA GOW KIL LD LHA MOU PND SIN WAS WKD</td>
+	<td>Was by a mousing owl hawk'd at and kill'd.</td>
+	<td>11</td>
+	<td>P</td>
+</tr>
+<tr>
+	<td>ATH BLE BUB EAR HAS PER SAS THE THE THH WAT</td>
+	<td>The earth hath bubbles, as the water has</td>
+	<td>3</td>
+	<td>P</td>
+</tr>
+<tr>
+	<td>ATW BUT COR EAP ELA ILE ISM N ONS RDS SWO TOS UGH</td>
+	<td>But swords I smile at, weapons laugh to scorn, </td>
+	<td>27</td>
+	<td>E</td>
+</tr>
+<tr>
+	<td>AVE ENO HDT HES ISC IT LLD NAK OTC TKI WEH</td>
+	<td>We have scotch'd the snake, not kill'd it:</td>
+	<td>13</td>
+	<td>I</td>
+</tr>
+<tr>
+	<td>AYT CCR EEP EFR ODA OMD PAC SIN SPE THI TTY Y</td>
+	<td>Creeps in this petty pace from day to day</td>
+	<td>25</td>
+	<td>C</td>
+</tr>
+<tr>
+	<td>BLE BLE BLE DOU DOU DTR LAN OOU TOI</td>
+	<td>Double, double toil and trouble; </td>
+	<td>18</td>
+	<td>O</td>
+</tr>
+<tr>
+	<td>BOU EVE GH HEE IER LET MDO OLD RYS WHI WNA</td>
+	<td>Let every soldier hew him down a bough </td>
+	<td>24</td>
+	<td>E</td>
+</tr>
+<tr>
+	<td>BUT CE EST EWY GET ICK ING OTH OUR PCO PLA SCR URA</td>
+	<td>But screw your courage to the sticking-place, </td>
+	<td>7</td>
+	<td>P</td>
+</tr>
+<tr>
+	<td>CES DPA EAC GET MOR ORE PTH SAN SE SSA STO YPU</td>
+	<td>Stop up the access and passage to remorse, </td>
+	<td>5</td>
+	<td>Y</td>
+</tr>
+<tr>
+	<td>CHE FRY NGL OFT REA RY YOU</td>
+	<td>Young fry of treachery!</td>
+	<td>19</td>
+	<td>L</td>
+</tr>
+<tr>
+	<td>DFO FAI FOU IRA LAN RIS SFA ULI</td>
+	<td>Fair is foul, and foul is fair:</td>
+	<td>1</td>
+	<td>A</td>
+</tr>
+<tr>
+	<td>DPS EAM EEW EIR ERS IDR IGH IST STN THE THR TLA TOF</td>
+	<td>I dreamt last night of the three weird sisters: </td>
+	<td>8</td>
+	<td>P</td>
+</tr>
+<tr>
+	<td>DTH E EDT ERE GAT GAT KIN OBE ROC SKN THE TOB</td>
+	<td>To bed, to bed! there's knocking at the gate: </td>
+	<td>21</td>
+	<td>R</td>
+</tr>
+<tr>
+	<td>EA ERE IEZ ING LLS LYH NOJ SME UTT WOO YFR</td>
+	<td>Smells wooingly here: no jutty, frieze,</td>
+	<td>6</td>
+	<td>A</td>
+</tr>
+<tr>
+	<td>EAR ED END ERE FRI IWO MRI RIV SAF SSW SWE THE ULD</td>
+	<td>I would the friends we miss were safe arrived.</td>
+	<td>28</td>
+	<td>R</td>
+</tr>
+<tr>
+	<td>EDI ENC EOB ERE EWH IVC LYO TIS TOG TRU WED</td>
+	<td>To give obedience where 'tis truly owed: </td>
+	<td>22</td>
+	<td>C</td>
+</tr>
+<tr>
+	<td>GAT HAT HDR IVE ORW PUR RBC TRH UBA UG WHA YME</td>
+	<td>What rhubarb, cyme, or what purgative drug,  </td>
+	<td>23</td>
+	<td>H</td>
+</tr>
+</table>
+
+<p>Reading the extra letters in scene order gives the message: APPLY APPROPRIATE COLORCHECKER.  What would be the appropriate ColorChecker?  Why the <a href=https://en.wikipedia.org/wiki/ColorChecker>Macbeth ColorChecker</a>, of course!</p>
+
+<center>
+<img src="Gretag-Macbeth_ColorChecker.jpg">
+</center>
+
+<p>Indexing each color from the top left and going right and then down, (so #735244 = A, #c29682 = B, #627a9d = C and so on), gives the message: NAME OF SW PAINT SIX TWO THREE FOUR.  What is Sherman Williams Paint 6234?  It is <a href=https://www.sherwin-williams.com/homeowners/color/find-and-explore-colors/paint-colors-by-family/SW6234-uncertain-gray>UNCERTAIN GRAY</a>, which is the final answer to our puzzle.</p>
+
