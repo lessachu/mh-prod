@@ -1,0 +1,13 @@
+/* styles specific to this puzzle */
+#puzz #portrait {
+    text-align: center;
+    background-color: beige;
+}
+
+.stanleys img {
+	width:350px;
+}
+
+.accessories img {
+	width:700px;
+}
