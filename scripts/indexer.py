@@ -20,7 +20,7 @@ class TextTransform:
        with open(input_file, "r") as f:
 
         text = f.read()
-        text = text.translate({ord(i): None for i in '.,!?;:()'})
+        text = text.translate({ord(i): None for i in '.,!?&;:()'})
         text = text.lower()
 
         return text.split()
