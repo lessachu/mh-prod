@@ -1,0 +1,19 @@
+# only lowercase, number, _ (no spaces)
+shortname: pressed_pennies_capstone
+
+# Display version of title. No HTML <tags>
+title: Pressed Pennies
+
+#  Who to call in emergency. Make sure you're in roster!
+oncall: todde@fool.com
+authors: [Mark Gottlieb, Todd Etter, Yar Woo, Brent Holman, Benjamin L de Bivort]
+
+# in http://ptron.../puzzle.php?pid=2 , the 2
+puzzletron_id: 225
+
+# (For Safari-round multi-answer puzzles, could be more than one)
+answers:
+ - FOR THIS CENT I MINT ALL VALUE
+
+for_ops_url: https://docs.google.com/document/d/1HWKcHBb_m2X_Fst4esqRdVBuMyi1MVyRDKkkhCI5O58/edit
+
