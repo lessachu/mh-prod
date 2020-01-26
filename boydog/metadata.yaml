@@ -14,7 +14,7 @@ puzzletron_id: 157
 
 # (For Safari-round multi-answer puzzles, could be more than one)
 answers:
- - SMURFTURF
+ - SMURF TURF
 
 # Things the answer checker responds to (and the responses),
 # though they're not the solution. E.g., "Bring us cookies
@@ -22,3 +22,5 @@ answers:
 # It's probably displayed in small area, so don't get too wild.
 responses:
   GRASS FOOTBALL BOISE: "Keep going..."
+
+for_ops_url: https://docs.google.com/document/d/1TarZB8AJVy7N9ENlFL73j5Eskyd8mtiix6gl-OVyoVM/edit
