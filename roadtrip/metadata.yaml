@@ -16,7 +16,7 @@ puzzletron_id: 31
 answers:
  - 🏐
 
-# Things the answer checker responds to (and the responses),
-# though they're not the solution. E.g., "Bring us cookies
-# (so we can tell you the real answer)". Response can have HTML.
-# It's probably displayed in small area, so don't get too wild.
+responses:
+ # "Honest guesses"
+ VOLLEYBALL: ~
+

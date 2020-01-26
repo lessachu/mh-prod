@@ -18,6 +18,10 @@
 	padding:20px;
 }
 
+#authorTable {
+    font-size: 70%;
+}
+
 #puzz #author1 {
 	font-size:25px;
 	font-weight:bold;
