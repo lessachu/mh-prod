@@ -1,7 +1,7 @@
 # only lowercase, number, _ (no spaces)
 shortname: duel
 
-# Display version of title. No HTML <tags>
+# Display version of title. HTML &entities; are OK, but no <tag>s
 title: High Noon Duel
 
 #  Who to call in emergency. Make sure you're in roster!
@@ -9,10 +9,13 @@ oncall: jan.chong@gmail.com
 authors: [Jan Chong, Matthew Hartman]
 
 # in http://ptron.../puzzle.php?pid=2 , the 2
-puzzletron_id: 130
+puzzletron_id: 130      
 
-
-# (For Safari-round multi-answer puzzles, could be more than one)
+# (For Safari-round multi-answer puzzles, use answer1, answer2, ...)
 answers:
  - KRONK
+
+
+responses:
+  PUDDYS PARALLEL: Keep going…
 
