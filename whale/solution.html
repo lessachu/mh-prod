@@ -2,15 +2,15 @@
   <link rel=stylesheet href="style.css" />
 </head>
 
-<h2>How to Solve</h2>
 
-<p>This puzzle adapts rules from the game Rush Hour, with the Willy the whale replacing the red car (and using different move logic for Willy).
+
+<p>This puzzle adapts rules from the game Rush Hour, with Willy the killer whale replacing the red car (and using different move logic).
 
 <p>For each of the grids, first find the path that gets Willy to the open sea in the fewest number of moves.  The solutions are as follows:
 
 <div class="grids">
 <h3>GRID 1</h3>
-Total Moves: 24  Whale Moves: 18 <br>
+Total Moves: 23  Whale Moves: 17 <br>
 <img src="assets/grid1.png" width=200>
 <table>
 	<tr>
@@ -238,9 +238,9 @@ down twice
 		</td>
 		<td>
 			<pre>
-23-24. Move Willy
-up twice
-. . .|. .|.
+23. Move Willy
+up once (partway off board)
+. . .|. .|W
     -      
 . A A . . .
            
@@ -1215,14 +1215,14 @@ C C . A . .
 </tr>
 </table>
 <h3>GRID 5</h3>
-Total Moves: 24  Whale Moves: 21 <br>
+Total Moves: 23  Whale Moves: 20 <br>
 <img src="assets/grid5.png" width=200>
 <table>
 	<tr>
 		<td>
 			<pre>
-1-2. Move Willy
-left twice
+1. Jump Willy
+left, over wall
 .|. .|. . .
            
 . . .|. . .
@@ -1238,7 +1238,7 @@ W W|. . . .
 		</td>
 		<td>
 			<pre>
-2-4. Roll Willy
+2-3. Roll Willy
 up twice
 .|. .|. . .
            
@@ -1256,7 +1256,7 @@ W W .|. . .
 		</td>
 		<td>
 			<pre>
-5-7. Move Willy
+4-6. Move Willy
 right three times
 .|. .|. . .
            
@@ -1273,7 +1273,7 @@ right three times
 		</td>
 		<td>
 			<pre>
-8-9. Move Willy
+7-8. Move Willy
 up twice
 .|. .|. . W
            
@@ -1292,7 +1292,7 @@ up twice
 	<tr>
 		<td>
 			<pre>
-10. Move Willy left
+9. Move Willy left
 .|. .|W W .
            
 . . .|. . .
@@ -1309,7 +1309,7 @@ up twice
 
 		<td>
 			<pre>
-11-12. Roll Willy
+10-11. Roll Willy
 down twice
 .|. .|. . .
            
@@ -1327,7 +1327,7 @@ down twice
 		</td>
 		<td>
 			<pre>
-13. Move Willy right
+12. Move Willy right
 .|. .|. . .
            
 . . .|. . .
@@ -1343,7 +1343,7 @@ down twice
 		</td>
 		<td>
 			<pre>
-14-15. Move A
+13-14. Move A
 right twice
 .|. .|. . .
            
@@ -1363,7 +1363,7 @@ right twice
 	<tr>
 		<td>
 			<pre>
-16. Move Willy up
+15. Move Willy up
 .|. .|. . W
            
 . . .|. . W
@@ -1379,7 +1379,7 @@ right twice
 		</td>
 		<td>
 			<pre>
-17. Move A right
+16. Move A right
 .|. .|. . W
            
 . . .|. . W
@@ -1395,7 +1395,7 @@ right twice
 		</td>
 		<td>
 			<pre>
-18-19. Roll Willy
+17-18. Roll Willy
 left twice
 .|. .|W . .
            
@@ -1412,7 +1412,7 @@ left twice
 		</td>
 		<td>
 			<pre>
-20. Move Willy down
+19. Move Willy down
 .|. .|. . .
            
 . . .|. . .
@@ -1430,7 +1430,7 @@ left twice
 	<tr>
 		<td>
 			<pre>
-21-22. Move Willy
+20-21. Move Willy
 left twice
 .|. .|. . .
            
@@ -1447,7 +1447,7 @@ W . . . A A
 		</td>
 		<td>
 			<pre>
-23-24. Move Willy 
+22-23. Move Willy 
 up twice
 .|. .|. . .
            
@@ -1470,7 +1470,16 @@ up twice
 <p>
 For the first extract, count the number of moves that Willy has to make in each grid.  Converting each to a letter spells out the answer QUEST.
 
-For the second extraction, note that Willy jumps over at least one sea wall in each grid and that each sea wall has a child standing on it.  Taking the letter that corresponds to where the child is standing on the seawall gets the final word (read in jump order): SHACKLE 
+<p>
+  For the second extraction, note that Willy jumps over at least one sea wall in each grid
+  and that each sea wall has a child standing on it.
+  Take the letter that corresponds to where the child is standing on the sea wall,
+  from Willy's point of view.
+  (<i>E.g.</i>, in the second grid, Jona<b>h</b> stands at the east edge of his wall as
+  Willy jumps from the South. Jonah's as far as he can be to Willy's right,
+  so we extract&nbsp;H.
+  He<b>a</b>th stands at the middle of his wall, so we extract&nbsp;A.)
+  Reading in jump-order gets the final word: SHACKLE 
 
 <div class="grids">
 <table>
@@ -1560,7 +1569,7 @@ GRID 5
     - - - - 
 . .|. . . .
            
-. .<font color="#FF2222">|</font>. . . .   <- HO(L)LY
+. .<font color="#FF2222">|</font>. . . .   <- HOL(L)Y
 </pre>
 </td>
 </tr>
