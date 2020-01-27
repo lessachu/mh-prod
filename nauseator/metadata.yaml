@@ -1,0 +1,19 @@
+# only lowercase, number, _ (no spaces)
+shortname: nauseator
+
+# Display version of title. No HTML <tags>
+title: The Nauseator
+
+#  Who to call in emergency. Make sure you're in roster!
+oncall: houseofcardsmail@yahoo.com
+authors: [Mark Gottlieb]
+
+# in http://ptron.../puzzle.php?pid=2 , the 2
+puzzletron_id: 266
+
+# (For Safari-round multi-answer puzzles, could be more than one)
+answers:
+ - CIGARETTES
+
+responses:
+  CAPRI JADES EG: ~
