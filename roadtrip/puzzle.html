@@ -90,17 +90,21 @@ function doSomething(cell) {
   var res = 31*one + two - subt;
 
   var room = roomMap.get(res);
-  if (photoList.includes(room)) {
-  	var a = document.createElement('a');
-  	var link = document.createTextNode(room); 
-  	a.appendChild(link);  
-    a.title = room;  
-    a.href = 'assets/' + room  + '.jpg';  
+  var path = document.getElementById('imagePath').src;
+  path = path.slice(0, path.lastIndexOf("assets"));
+  var a = document.createElement('a');
+  var link = document.createTextNode(room); 
+  a.appendChild(link);
+  a.title = room;  
+
+  if (photoList.includes(room)) { 
+    a.href = path + 'assets/' + room  + '.jpg';  
     document.getElementById('emojiDestination').textContent="";
     document.getElementById('emojiDestination').appendChild(a);  
-
   } else {
-     document.getElementById('emojiDestination').textContent = roomMap.get(res);
+    a.href = path + 'assets/wrongroom.jpg';  
+    document.getElementById('emojiDestination').textContent="";
+    document.getElementById('emojiDestination').appendChild(a);  
   }
   document.getElementById('emojiDestination').style.display = "inline";
   selectState = 0;
@@ -137,6 +141,10 @@ puzzle_init = displayPage;
 </head>
 <body id="puzz" onload="displayPage()">
 
+<div class="fourthwall" style="background-color: white; border: 2px dotted blue; padding: 1em;">
+This puzzle has been modified since the hunt to make remote solving possible.
+</div>
+
  <p class="flavor">
  "I liked the book better."
  </p>
@@ -163,7 +171,7 @@ E. B. White
 
 <table id="roadtrip_table1" class="roadtrip_table1">
 	<tr>
-		<td><img src=assets/image1.png></td>
+		<td><img src=assets/image1.png id="imagePath"></td>
 		<td><img src=assets/image2.png></td>
 		<td><img src=assets/image3.png></td>
 		<td><img src=assets/image4.png></td>
