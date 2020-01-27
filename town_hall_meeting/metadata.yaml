@@ -1,0 +1,15 @@
+shortname: town_hall_meeting
+title: Town Hall Meeting
+answer: BAZOOKAS
+
+author:
+  - Jan Chong
+
+oncall: dougz@isotropic.org
+puzzletron_id: 275
+
+obfuscate_assets: true
+scrum: true
+
+for_ops_url: https://docs.google.com/document/d/1mCe_kUMXmowSjCHcaPhD3mBI_CQPd_7NREWz_jh8zPo/edit
+
