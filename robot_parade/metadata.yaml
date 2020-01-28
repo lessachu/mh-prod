@@ -1,0 +1,21 @@
+# only lowercase, number, _ (no spaces)
+shortname: robot_parade
+
+# Display version of title. No HTML <tags>
+title: Infinite Robot Parade
+
+#  Who to call in emergency. Make sure you're in roster!
+oncall: linda@linda.com
+authors: [Linda Holman]
+
+# in http://ptron.../puzzle.php?pid=2 , the 2
+puzzletron_id: 2222
+
+
+# (For Safari-round multi-answer puzzles, could be more than one)
+answers:
+ - RUSTY
+
+for_ops_url: https://docs.google.com/document/d/1HWKcHBb_m2X_Fst4esqRdVBuMyi1MVyRDKkkhCI5O58/edit
+
+
