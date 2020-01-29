@@ -17,7 +17,7 @@ function displayPage() {
 
 function elimination_init(){
 
-	//shuffle_cards();
+	shuffle_cards();
  	var path = document.getElementById('imagePath').src;
   	path = path.slice(0, path.lastIndexOf("assets"));
 	var table = document.getElementById('elimination_match_table'); 
@@ -77,6 +77,20 @@ function show_herring() {
 	 gFirstSelected = undefined;
 	 gSecondSelected = undefined;
 
+    var table = document.getElementById('elimination_match_table'); 
+    var count = 0;
+    for (var i = 0; i < 4; i++) {
+	  for (var j = 0; j < 6; j++) {
+	  		asset_name = get_asset_name(table.rows[i].cells[j]);
+	  	 	if (asset_name == "red.svg") {
+	  	 		count = count + 1;
+			}
+		}
+		}
+
+	if (count <= 4) {
+		elimination_init();
+	}
 }
 
 function flip_back(){
@@ -199,15 +213,16 @@ puzzle_init = displayPage;
 </center>
 
 <p>For this puzzle, players had to toss rings around the neck of bottles that were painted various colors.  Each time the player successfully landed a ring on a bottle, they received a slip of paper (although over time, we just ended up giving players slips any time they hooked a bottle, regardless of color).</p>
-
-<ul>
-	<li>SLOPE</li>
-	<li>JUMP</li>
-	<li>BUM</li>
-	<li>BUNNY</li>
-	<li>LIFT</li>
-	<li>POLE</li>
-</ul>
+<center>
+<table cellspacing=5>
+	<tr><td>SLOPE</td></tr>
+	<tr><td>JUMP</td></tr>
+	<tr><td>BUM</td></tr>
+	<tr><td>BUNNY</td></tr>
+	<tr><td>LIFT</td></tr>
+	<tr><td>POLE</td></tr>
+</table>
+</center>
 
 <h3>Ball In the Bowl</h3>
 <center>
