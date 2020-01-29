@@ -51,7 +51,7 @@ function select_match(cell) {
 	 		reveal_image(cell);
 	 		asset_name = get_asset_name(cell);
 	 		if (get_asset_name(gFirstSelected) != asset_name) {
-	 			console.log("not match: " + get_asset_name(gFirstSelected) + " vs " + asset_name);
+	 	//		console.log("not match: " + get_asset_name(gFirstSelected) + " vs " + asset_name);
 	 			gFirstSelected = undefined;
 	 			setTimeout(flip_back, 700);
 	 			return;
@@ -153,7 +153,7 @@ puzzle_init = displayPage;
 </center>
 
 
-<p>Players found a 6 x 4 grid of squares covering a picture. Players take turns picking two squares to reveal the images underneath and attempting to make a match - when they uncover two matching symbols, that square is removed from the board, revealing a piece of the underlying picture. Any successful match resulted in player gaining a prize ticket.</p>
+<p>Players found a 6 x 4 grid of squares covering a picture. Players take turns picking two squares to reveal the images underneath and attempting to make a match - when they uncover two matching symbols, that square is removed from the board, revealing a piece of the underlying picture. Any successful match resulted in player gaining a prize ticket.  When there are only four uncovered squares on the board, the entire board resets.</p>
 
 <center>
 <table id="elimination_match_table">
@@ -225,7 +225,52 @@ puzzle_init = displayPage;
 
 
 <h3>Open Range</h3>
+<center>
+<table>
+	<tr><td><img src=assets/open1.jpg height=250></td>
+		<td><img src=assets/open2.png height=250></td></tr>
+</table>
+</center>
 
+<p>At this booth, player tossed bean bags at wooden blocks with pictures on them.  Each block that was knocked over, flipped over to reveal a second image (see the photo to the right above).  Hitting a block earned a ticket.  The sets of images were:</p>
+
+<center>
+<table cellpadding=5>
+	<tr><th>Block Picture</th><th>Knocked Over Picture</th></tr>
+	<tr>
+		<td><img src=assets/circus_tent.png width=75></td>
+			<td><img src=assets/elephant.png width=75></td>
+	</tr>
+	<tr>
+		<td><img src=assets/hospital.png width=75></td>
+				<td><img src=assets/nurse.png height=75></td>
+	</tr>
+	<tr>
+		<td><img src=assets/dinosaur_egg.png width=75></td>
+				<td><img src=assets/velociraptor.png width=75></td>
+	</tr>
+	<tr>
+		<td><img src=assets/chicken.png width=75></td>
+		<td><img src=assets/chicken_egg.png width=75></td>
+	</tr>
+	<tr>
+		<td><img src=assets/bottle.png width=75></td>
+		<td><img src=assets/lightning.png width=75></td>
+	</tr>
+	<tr>
+		<td><img src=assets/rowboat.png width=75></td>
+			<td><img src=assets/oar.png width=75></td>
+	</tr>
+	<tr>	
+		<td><img src=assets/oyster.png width=75></td>
+<td><img src=assets/pearl.png width=75></td>
+</tr>
+<tr>
+		<td><img src=assets/coral.png height=75></td>
+				<td><img src=assets/eel.png height=75></td>
+	</tr>
+</table>
+</center>
 
 
 <h3>Gone Fishin'</h3>
