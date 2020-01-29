@@ -1,0 +1,32 @@
+# only lowercase, number, _ (no spaces)
+shortname: safari_adventure
+
+# Display version of title. No HTML <tags>
+title: Safari Adventure
+
+#  Who to call in emergency. Make sure you're in roster!
+oncall: tigupine@gmail.com
+authors: [Ian Tullis, Todd Etter, Yar Woo, Wei-Hwa Huang, Brent Holman]
+
+# in http://ptron.../puzzle.php?pid=2 , the 2
+puzzletron_id: 39
+
+# (For Safari-round multi-answer puzzles, could be more than one)
+answers:
+ - FLEHMEN LIPS
+
+responses:
+ FLEHMEN LIPS: "Don't forget to solve all eleven Safari keepers, as well!"
+ BURNT: ~
+ FEET: ~
+ DISTANT: ~
+ SEIZE: ~
+ CHAIN: ~
+ SKIES: ~
+ BRAIN: ~
+ DREADHAND: ~
+ ART: ~
+ TERRORS: ~
+ SMILE: ~
+
+for_ops_url: https://docs.google.com/document/d/13W_TLdYv4B2D6YkUxw82uNUmRE9flHA6BWD7FA6JTiY/edit
