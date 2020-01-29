@@ -2,6 +2,15 @@
 
 <script type="text/javascript">
 
+var gCards = [ 
+
+  [ "battery.png", "boot.png", "crutch.png", "ear.png", "dice.png", "ear.png"],
+  [ "glass.png", "coat.png", "eye.png", "candlestick.png", "shaker.png", "hand.png"],
+  ["walkie.png", "tail.png", "battery.png", "hand.png", "crutch.png", "glass.png"],
+  ["walkie.png", "boot.png", "dice.png", "shaker.png", "candlestick.png", "eye.png"]
+
+];
+
 function displayPage() {
    elimination_init() 
 }
@@ -18,16 +27,25 @@ var table = document.getElementById('elimination_match_table');
 }
 
 
-var selectState = 0;
+var gSelectState = 0;
 function select_match(cell) {
 	var table = document.getElementById('elimination_match_table'); 
-	if (selectState == 0) {
+	if (gSelectState == 0) {
 		reveal_image(cell);
 	}
 }
 
 function reveal_image(cell) {
- cell.innerHTML = "<img src=assets/H" + cell.closest('tr').rowIndex + "_" + cell.closest('td').cellIndex + ".png width=75>";  
+
+  var path = document.getElementById('imagePath').src;
+  path = path.slice(0, path.lastIndexOf("assets"));
+
+  var i = cell.closest('tr').rowIndex;
+  var j = cell.closest('td').cellIndex;
+
+  cell.innerHTML = "<img src=" + path + "assets/" + gCards[i][j] + " width=75 height=75>";
+
+ //cell.innerHTML = "<img src=" + path + "assets/H" + cell.closest('tr').rowIndex + "_" + cell.closest('td').cellIndex + ".png width=75>";  
 
 }
 
@@ -50,7 +68,7 @@ puzzle_init = displayPage;
 <h3>Elimination Match</h3>
 <center>
 <table>
-	<tr><td><img src=assets/elimination_match1.jpg height=250></td>
+	<tr><td><img src=assets/elimination_match1.jpg height=250 id="imagePath"></td>
 		<td><img src=assets/elimination_match2.jpg height=250></td></tr>
 </table>
 </center>
@@ -101,7 +119,31 @@ puzzle_init = displayPage;
 </table>
 </center>
 
-<h3>Ball Into the Bowl</h3>
+<h3>Ball In the Bowl</h3>
+<center>
+<table>
+	<tr><td><img src=assets/ball1.jpg height=250></td>
+		<td><img src=assets/ball2.jpg height=250></td></tr>
+</table>
+</center>
+
+<p>In this game, players had to toss a ball into bowls floating in a tub of water. If they succeeded, they won tickets and, depending on what color bowl they succeeded in landing the ball in, a letter. Dave Tytell does such a good job explaining the rules and the key information for this puzzle, that we'll just let him do it here as well:</p>
+
+<center>
+<iframe width="560" height="315" src="https://www.youtube.com/embed/9PvBpCFkkX0" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+</center>
+
+<p>The following bowls yielded the following text on white slips of paper:</p>
+<center>
+	<table cellpadding=5>
+		<tr><th>Bowl Color</th><th>Paper Text</th></tr>
+		<tr><td>red</td><td>MITSUBISHI 3 5 [4]</td></tr>
+		<tr><td>orange</td><td>NEW ERA 9[9]</td></tr>	
+		<tr><td>yellow</td><td>CAPITAL ONE 6 [2]</td></tr>	
+		<tr><td>green</td><td>AUTOZONE 7 [7]</td></tr>			
+	</table>
+</center>  
+
 
 <h3>Open Range</h3>
 
@@ -110,8 +152,8 @@ puzzle_init = displayPage;
 <h3>Gone Fishin'</h3>
 <center>
 <table>
-	<tr><td><img src=assets/croquet1.jpg height=250></td>
-		<td><img src=assets/croquet2.png height=250></td></tr>
+	<tr><td><img src=assets/fish1.jpg height=250></td>
+		<td><img src=assets/fish2.jpg height=250></td></tr>
 </table>
 </center>
 
@@ -125,6 +167,7 @@ puzzle_init = displayPage;
 </center>
 
 <p>At this booth, the players had to play croquet upside down (bending over & hitting the ball back between their legs toward a target, as you can see in the image above and to the right). The booth had nine targets in all, three for each of three ‘stations.’ The first station is “beginning,” the second is “middle” and the last is “end.” Hitting a ball into any of the nine targets results in a circular piece turning upside down to reveal a 4-letter word.  For post-event solving purposes, we've displayed all 9 words below, roughly formatted as the players would have seen them, had they managed to hit all 9 targets in one round.</p> 
+
 <center>
 	<font color=#A50707 size=5>
 <table cellspacing=5>
