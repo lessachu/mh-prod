@@ -1,0 +1,23 @@
+# only lowercase, number, _ (no spaces)
+shortname: star_maps
+
+# Display version of title. No HTML <tags>
+title: Star Maps
+
+#  Who to call in emergency. Make sure you're in roster!
+oncall: debivort@gmail.com
+authors: [Ben de Bivort]
+
+# in http://ptron.../puzzle.php?pid=2 , the 2
+puzzletron_id: 82
+
+# (For Safari-round multi-answer puzzles, could be more than one)
+answers:
+ - 📦
+
+responses:
+ # "honest guesses": wrong but don't count against spam count
+ PACKAGE: ~
+ 
+for_ops_url: https://docs.google.com/document/d/1_yLKkH3cWtgnLn11FBvfma0VkHORfweaYc7n5gzDH6U/edit
+

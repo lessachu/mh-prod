@@ -1,0 +1,26 @@
+# only lowercase, number, _ (no spaces)
+shortname: storykeeper_bookshop
+
+# Display version of title. No HTML <tags>
+title: The Storykeeper Bookshop
+
+#  Who to call in emergency. Make sure you're in roster!
+oncall: yarwoo@gmail.com
+authors: [Yar Woo, Matthew Hartman, Linda Holman, Philip Dasler, Summer Herrick]
+
+# in http://ptron.../puzzle.php?pid=2 , the 2
+puzzletron_id: 198
+
+# (For Safari-round multi-answer puzzles, could be more than one)
+answers:
+ - SORRY IM LATE
+
+responses:
+ THANK YOU: ~
+ THANK YOU SORRY IM LATE: ~
+ COVER FOR ME:
+   reply: "Please visit Guest Services at 10-105. Give your team name and the Promo Code: ARTIST WORK to pick up your assignment."
+   remote_reply: "Draw a full-color illustration of any classic fairy tale, set at Penny Park.<br>Email your illustration to Guest Services at sharewith@pennypark.fun.<br>In the Subject: line, put STORYKEEPER+your team name. Keep an eye out for a reply."
+
+for_ops_url: https://docs.google.com/document/d/1BDLzQIRJU_blYRX9JS140CIz3BpFvXNau8YoZy83b84/edit
+
