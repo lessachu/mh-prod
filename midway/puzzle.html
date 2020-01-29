@@ -16,23 +16,92 @@ function displayPage() {
 }
 
 function elimination_init(){
-var table = document.getElementById('elimination_match_table'); 
- for (var i = 0; i < 4; i++) {
-  for (var j = 0; j < 6; j++) {
-     table.rows[i].cells[j].onclick = function () {
-        select_match(this);
-   };
-  }
- }
+
+	//shuffle_cards();
+ 	var path = document.getElementById('imagePath').src;
+  	path = path.slice(0, path.lastIndexOf("assets"));
+	var table = document.getElementById('elimination_match_table'); 
+	 for (var i = 0; i < 4; i++) {
+	  for (var j = 0; j < 6; j++) {
+	  	 table.rows[i].cells[j].innerHTML = "<img src=" + path + "assets/red.svg width=75>";
+	     table.rows[i].cells[j].onclick = function () {
+	        select_match(this);
+	   }
+	  }
+	}
+
 }
 
+var gFirstSelected = undefined;
+var gSecondSelected = undefined;
 
-var gSelectState = 0;
 function select_match(cell) {
+
+  if (gSecondSelected == undefined) {
+
 	var table = document.getElementById('elimination_match_table'); 
-	if (gSelectState == 0) {
-		reveal_image(cell);
+
+ 	var asset_name = get_asset_name(cell);
+ 	if (asset_name == "red.svg") {
+ 		if (gFirstSelected == undefined) {
+ 			reveal_image(cell);
+ 			gFirstSelected = cell;
+	 		return;
+	 	} else {
+	 		reveal_image(cell);
+	 		asset_name = get_asset_name(cell);
+	 		if (get_asset_name(gFirstSelected) != asset_name) {
+	 			console.log("not match: " + get_asset_name(gFirstSelected) + " vs " + asset_name);
+	 			gFirstSelected = undefined;
+	 			setTimeout(flip_back, 700);
+	 			return;
+	 		} else {
+
+	 			gSecondSelected = cell;
+	 			setTimeout(show_herring, 700);
+
+	 		}
+	 	}
+ 	}
+ }
+
+}
+
+function show_herring() {
+	var path = document.getElementById('imagePath').src;
+  	path = path.slice(0, path.lastIndexOf("assets"));
+
+	 gFirstSelected.innerHTML = "<img src=" + path + "assets/H" + gFirstSelected.closest('tr').rowIndex + "_" + gFirstSelected.closest('td').cellIndex + ".png width=75>";
+	 gSecondSelected.innerHTML = "<img src=" + path + "assets/H" + gSecondSelected.closest('tr').rowIndex + "_" + gSecondSelected.closest('td').cellIndex + ".png width=75>";
+
+	 gFirstSelected = undefined;
+	 gSecondSelected = undefined;
+
+}
+
+function flip_back(){
+	var table = document.getElementById('elimination_match_table'); 
+	for (var i = 0; i < 4; i++) {
+	  for (var j = 0; j < 6; j++) {
+	  	asset_name = get_asset_name(table.rows[i].cells[j]);
+	  	 if (!asset_name.startsWith("H")) {
+	  	 	 var path = document.getElementById('imagePath').src;
+  			path = path.slice(0, path.lastIndexOf("assets"));
+		  	 table.rows[i].cells[j].innerHTML =  "<img src=" + path + "assets/red.svg width=75>";
+		}
 	}
+	}       
+}
+
+function get_asset_name(cell) {
+	var img = cell.getElementsByTagName('img');
+
+	if (img.length > 0) {
+	 	var asset_name = img[0].src;
+ 		asset_name = asset_name.slice(asset_name.lastIndexOf("assets") + 7);
+ 		return asset_name;
+ 	}
+ 	return "";
 }
 
 function reveal_image(cell) {
@@ -45,8 +114,18 @@ function reveal_image(cell) {
 
   cell.innerHTML = "<img src=" + path + "assets/" + gCards[i][j] + " width=75 height=75>";
 
- //cell.innerHTML = "<img src=" + path + "assets/H" + cell.closest('tr').rowIndex + "_" + cell.closest('td').cellIndex + ".png width=75>";  
+}
 
+function shuffle_cards() {
+	for (var i = 0; i < 4; i++) {
+	  for (var j = 0; j < 6; j++) {
+	  	tmp = gCards[i][j];
+	  	rand_i = Math.floor(Math.random() * 4);
+	  	rand_j = Math.floor(Math.random() * 6);
+	  	gCards[i][j] = gCards[rand_i][rand_j];
+	  	gCards[rand_i][rand_j] = tmp;
+	  }
+ 	}
 }
 
 puzzle_init = displayPage;
