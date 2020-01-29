@@ -49,10 +49,11 @@ function select_match(cell) {
 	 		return;
 	 	} else {
 	 		reveal_image(cell);
+	 		gSecondSelected = cell;
 	 		asset_name = get_asset_name(cell);
 	 		if (get_asset_name(gFirstSelected) != asset_name) {
-	 	//		console.log("not match: " + get_asset_name(gFirstSelected) + " vs " + asset_name);
-	 			gFirstSelected = undefined;
+	// 			console.log("not match: " + get_asset_name(gFirstSelected) + " vs " + asset_name);
+
 	 			setTimeout(flip_back, 700);
 	 			return;
 	 		} else {
@@ -104,7 +105,9 @@ function flip_back(){
 		  	 table.rows[i].cells[j].innerHTML =  "<img src=" + path + "assets/red.svg width=75>";
 		}
 	}
-	}       
+	}
+	gFirstSelected = undefined;
+	gSecondSelected = undefined; 
 }
 
 function get_asset_name(cell) {
